@@ -75,3 +75,9 @@ DerivedDataCache/*
 
 Plugins/Wwise
 *.sublime-workspace
+
+# temporary ignore
+/Config
+/Content/CrimeBossMeta/Resources/Graphs
+/Content/WwiseAudio/GeneratedSoundData/SoundBanks/Game_Parameters/Factory_SoundSeed_Air_Game_Syncs
+/Content/WwiseAudio/GeneratedSoundData/SoundBanks/Virtual_Acoustics/Factory_Acoustic_Textures
