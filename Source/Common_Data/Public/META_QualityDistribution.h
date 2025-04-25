@@ -16,3 +16,4 @@ public:
     FMETA_QualityDistribution();
 };
 
+FORCEINLINE uint32 GetTypeHash(const FMETA_QualityDistribution& Value) { return 0; }
