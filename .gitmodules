@@ -1,0 +1,3 @@
+[submodule "Plugins/CB-UGCPlugin"]
+	path = Plugins/CB-UGCPlugin
+	url = https://github.com/ingamestudios/CB-UGCPlugin
