@@ -17,8 +17,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<TSubclassOf<UMETA_DetectiveID>> GetDetectivesIDs(UObject* inWCO) const;
     
-    UFUNCTION(BlueprintCallable)
-    static FMETA_DetectiveTableRow GetDetectiveData(UObject* inWCO, TSubclassOf<UMETA_DetectiveID> inID, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FMETA_DetectiveTableRow GetDetectiveData(UObject* inWCO, TSubclassOf<UMETA_DetectiveID> inID, bool& outSucceeded);
     
 };
 

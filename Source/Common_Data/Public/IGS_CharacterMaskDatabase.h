@@ -17,8 +17,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetIndex(TSubclassOf<UIGS_CharacterMaskBase> inID) const;
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_CharacterMaskTableRow GetDataCharacterMask(UObject* inWCO, TSubclassOf<UIGS_CharacterMaskBase> inID, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_CharacterMaskTableRow GetDataCharacterMask(UObject* inWCO, TSubclassOf<UIGS_CharacterMaskBase> inID, bool& outSucceeded);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FIGS_CharacterMaskTableRow GetDataByIndexBP(int32 inIndex, bool& outSucceeded) const;

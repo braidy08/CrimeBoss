@@ -28,11 +28,11 @@ public:
     UFUNCTION(BlueprintCallable)
     static UDataTable* GetCutsceneDatabase();
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<ULevelStreaming*> GetAllStreamedLevel(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<ULevelStreaming*> GetAllStreamedLevel(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_EditorCutsceneInfo GetAllDialoguesForCutscene(UObject* inWCO, UIGS_MetaCutsceneDataAsset* inCutsceneData, FIGS_MetaCutsceneCharacters inCharacterParameters);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_EditorCutsceneInfo GetAllDialoguesForCutscene(UObject* inWCO, UIGS_MetaCutsceneDataAsset* inCutsceneData, FIGS_MetaCutsceneCharacters inCharacterParameters);
     
 };
 

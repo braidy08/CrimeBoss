@@ -12,8 +12,8 @@ class BF_VOICEOVER_API UIGS_PlayHeisterDialogue : public UIGS_PlayDialogueNodeBa
 public:
     UIGS_PlayHeisterDialogue();
 
-    UFUNCTION(BlueprintCallable)
-    static UIGS_PlayHeisterDialogue* PlayHeisterDialogue(UObject* inWCO, FText DialogueID);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_PlayHeisterDialogue* PlayHeisterDialogue(UObject* inWCO, FText DialogueID);
     
 };
 

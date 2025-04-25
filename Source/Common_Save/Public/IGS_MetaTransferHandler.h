@@ -38,86 +38,86 @@ protected:
 public:
     UIGS_MetaTransferHandler();
 
-    UFUNCTION(BlueprintCallable)
-    static void SetMissionScenarioOverride(const UObject* inWCO, FGameplayTag inMissionScenario);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetMissionScenarioOverride(const UObject* inWCO, FGameplayTag inMissionScenario);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetMissionData(const UObject* inWCO, FGameplayTag inTag, int32 InValue);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetMissionData(const UObject* inWCO, FGameplayTag inTag, int32 InValue);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetMetaData(const UObject* inWCO, FGameplayTag inTag, int32 InValue);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetMetaData(const UObject* inWCO, FGameplayTag inTag, int32 InValue);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetLootCollection(const UObject* inWCO, bool inCollectOnlySecuredLoot);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetLootCollection(const UObject* inWCO, bool inCollectOnlySecuredLoot);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetErrorText(const UObject* inWCO, FText InText);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetErrorText(const UObject* inWCO, FText InText);
     
-    UFUNCTION(BlueprintCallable)
-    static void SendSharedData(const UObject* inWCO, const FIGS_SharedMetaTransfer_Data& inSharedData);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SendSharedData(const UObject* inWCO, const FIGS_SharedMetaTransfer_Data& inSharedData);
     
-    UFUNCTION(BlueprintCallable)
-    static void SendMetaData(const UObject* inWCO, const FIGS_Meta2FPS_Data& InMetaData);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SendMetaData(const UObject* inWCO, const FIGS_Meta2FPS_Data& InMetaData);
     
-    UFUNCTION(BlueprintCallable)
-    static void SendFPSData(const UObject* inWCO, const FIGS_FPS2Meta_Data& inFPSData);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SendFPSData(const UObject* inWCO, const FIGS_FPS2Meta_Data& inFPSData);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_SharedMetaTransfer_Data ReadSharedData(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_SharedMetaTransfer_Data ReadSharedData(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_Meta2FPS_Data ReadQuickplayData(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_Meta2FPS_Data ReadQuickplayData(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_Meta2FPS_Data ReadMetaData(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_Meta2FPS_Data ReadMetaData(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_FPS2Meta_Data ReadFPSData(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_FPS2Meta_Data ReadFPSData(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void GetMissionData(const UObject* inWCO, TMap<FGameplayTag, int32>& outMissionData);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void GetMissionData(const UObject* inWCO, TMap<FGameplayTag, int32>& outMissionData);
     
-    UFUNCTION(BlueprintCallable)
-    static void GetMetadata(const UObject* inWCO, TMap<FGameplayTag, int32>& outMetaData);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void GetMetadata(const UObject* inWCO, TMap<FGameplayTag, int32>& outMetaData);
     
-    UFUNCTION(BlueprintCallable)
-    static bool GetLootCollection(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool GetLootCollection(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static FText GetErrorText(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FText GetErrorText(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static bool DoSharedDataExist(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool DoSharedDataExist(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static bool DoQuickplayDataExist(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool DoQuickplayDataExist(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static bool DoMetaDataExist(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool DoMetaDataExist(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static bool DoFPSDataExist(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool DoFPSDataExist(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void DeleteMetaData(const UObject* inWCO, FGameplayTag inTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void DeleteMetaData(const UObject* inWCO, FGameplayTag inTag);
     
-    UFUNCTION(BlueprintCallable)
-    static void ClearSharedData(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ClearSharedData(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void ClearMissionDataMap(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ClearMissionDataMap(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void ClearMetaDataMap(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ClearMetaDataMap(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void ClearMetaData(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ClearMetaData(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void ClearFPSData(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ClearFPSData(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void ClearAll(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ClearAll(const UObject* inWCO);
     
 };
 

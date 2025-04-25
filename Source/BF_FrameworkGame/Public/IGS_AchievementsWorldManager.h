@@ -12,11 +12,11 @@ class BF_FRAMEWORKGAME_API UIGS_AchievementsWorldManager : public UWorldSubsyste
 public:
     UIGS_AchievementsWorldManager();
 
-    UFUNCTION(BlueprintCallable)
-    static bool UpdateAchievement(UObject* WCO, FGameplayTag AchievementID, int32 Increment);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=WCO))
+static bool UpdateAchievement(UObject* WCO, FGameplayTag AchievementID, int32 Increment);
     
-    UFUNCTION(BlueprintCallable)
-    static bool UnlockAchievement(UObject* WCO, FGameplayTag AchievementID);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=WCO))
+static bool UnlockAchievement(UObject* WCO, FGameplayTag AchievementID);
     
 };
 

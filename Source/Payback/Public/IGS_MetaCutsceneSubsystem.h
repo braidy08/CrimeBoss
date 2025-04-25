@@ -228,8 +228,8 @@ public:
     UFUNCTION(BlueprintCallable)
     EIGS_MetaDialogueCharacterSlot GetCutsceneSlot(EIGS_MetaDialogueCharacterSlot inDialogueSlot);
     
-    UFUNCTION(BlueprintCallable)
-    static TSoftObjectPtr<UIGS_MetaCutsceneDataAsset> GetCutsceneDataAsset(UObject* inWCO, FText inCutsceneID);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TSoftObjectPtr<UIGS_MetaCutsceneDataAsset> GetCutsceneDataAsset(UObject* inWCO, FText inCutsceneID);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentNodeSkipTime() const;
@@ -243,8 +243,8 @@ public:
     UFUNCTION(BlueprintCallable)
     FIGS_MetaCutsceneCharacterPoseData GetCharacterPose(EIGS_MetaDialogueCharacter inCharacter, FGameplayTag inCharacterPoseSet, EIGS_MetaCutsceneCharacterPose InPose);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<FIGS_MetaCutsceneDataRow> GetAllCutscenesData(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<FIGS_MetaCutsceneDataRow> GetAllCutscenesData(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     FIGS_MetaCutscenePoseSet GetAllCharacterSlotPoses(EIGS_MetaDialogueCharacterSlot inSlot, FGameplayTagContainer inPoseSets);

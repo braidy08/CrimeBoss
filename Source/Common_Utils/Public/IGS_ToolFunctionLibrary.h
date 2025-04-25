@@ -17,8 +17,8 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SetRenderInDepthPass(UPrimitiveComponent* InComponent, bool InValue);
     
-    UFUNCTION(BlueprintCallable)
-    static bool IsEOSOnlineSubsystemActive(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool IsEOSOnlineSubsystemActive(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     static FString GetRegionCodeFromLocation(const FString& CountryCode, const FString& RegionCode, const FString& City);
@@ -26,8 +26,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<FString> GetRecentLevels();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static FString GetModdingState(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static FString GetModdingState(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 EvaluateGeoLocation(const FString& LocalRegion, const FString& RemoteRegion);

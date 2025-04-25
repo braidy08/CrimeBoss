@@ -36,14 +36,14 @@ public:
     UFUNCTION(BlueprintCallable)
     static void IsValidClass(UClass* inClass, EValidNotValidExecPin& outBranches);
     
-    UFUNCTION(BlueprintCallable)
-    static void IsServerOrStandalone(UObject* inWCO, EBoolExecPin& outBranches);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void IsServerOrStandalone(UObject* inWCO, EBoolExecPin& outBranches);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsLocallyControlledPlayerPawn(const APawn* inPawn);
     
-    UFUNCTION(BlueprintCallable)
-    static void IsinEditor(UObject* inWCO, EBoolExecPin& outBranches);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void IsinEditor(UObject* inWCO, EBoolExecPin& outBranches);
     
     UFUNCTION(BlueprintCallable)
     static void IsEditorBuild(EBoolExecPin& outBranches);
@@ -54,14 +54,14 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void GetUniqueNetID(APlayerController* PlayerController, FBPUniqueNetId& UniqueNetId);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static APlayerController* GetLocalPlayerControllerWithCustomWCO(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static APlayerController* GetLocalPlayerControllerWithCustomWCO(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static APlayerController* GetLocalPlayerControllerForWorld(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static APlayerController* GetLocalPlayerControllerForWorld(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static APlayerController* GetLocalPlayerController(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static APlayerController* GetLocalPlayerController(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FColor GetColorForTeamSide(EIGS_TeamSideEnum inTeamSide);

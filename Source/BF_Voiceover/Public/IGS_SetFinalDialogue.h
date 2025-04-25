@@ -18,8 +18,8 @@ public:
     
     UIGS_SetFinalDialogue();
 
-    UFUNCTION(BlueprintCallable)
-    static UIGS_SetFinalDialogue* SetFinalDialogue(UObject* inWCO, FText DialogueID, AActor* Character);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_SetFinalDialogue* SetFinalDialogue(UObject* inWCO, FText DialogueID, AActor* Character);
     
 
     // Fix for true pure virtual functions not being implemented

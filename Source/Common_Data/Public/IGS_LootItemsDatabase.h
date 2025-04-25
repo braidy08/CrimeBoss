@@ -17,8 +17,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetIndex(const TSubclassOf<UIGS_LootItemInventoryObject>& inClass) const;
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_LootItemTableRow GetDataLootItem(UObject* inWCO, const TSubclassOf<UIGS_LootItemInventoryObject>& inClass, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_LootItemTableRow GetDataLootItem(UObject* inWCO, const TSubclassOf<UIGS_LootItemInventoryObject>& inClass, bool& outSucceeded);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FIGS_LootItemTableRow GetDataByIndexBP(int32 inIndex, bool& outSucceeded) const;

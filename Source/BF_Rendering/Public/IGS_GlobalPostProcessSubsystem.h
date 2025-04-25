@@ -30,8 +30,8 @@ public:
     UFUNCTION(BlueprintCallable)
     void RemovePostProcessesFromCamera(UCameraComponent* inCamera, TArray<EIGS_PostProcessType> inPostProcessesTypes);
     
-    UFUNCTION(BlueprintCallable)
-    static UIGS_GlobalPostProcessSubsystem* Instance(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_GlobalPostProcessSubsystem* Instance(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     void ApplyPostProcessesToCamera(UCameraComponent* inCamera, TArray<EIGS_PostProcessType> inPostProcessesTypes);

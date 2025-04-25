@@ -60,17 +60,17 @@ public:
 
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
-    UFUNCTION(BlueprintCallable)
-    static void SetHordeModeCurrentWave(const UObject* inWCO, int32 inWave);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetHordeModeCurrentWave(const UObject* inWCO, int32 inWave);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetHordeModeCounterValues(const UObject* inWCO, int32 inTotalValue, float inCurrentProgress);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetHordeModeCounterValues(const UObject* inWCO, int32 inTotalValue, float inCurrentProgress);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetHordeModeCompletedWave(const UObject* inWCO, int32 inWave);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetHordeModeCompletedWave(const UObject* inWCO, int32 inWave);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetHordeModeActive(const UObject* inWCO, bool Inactive);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetHordeModeActive(const UObject* inWCO, bool Inactive);
     
 private:
     UFUNCTION(BlueprintCallable)
@@ -98,14 +98,14 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UIGS_HordeModeSettings* GetSettings() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static int32 GetHordeModeTotalEarnedTokens(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static int32 GetHordeModeTotalEarnedTokens(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static UIGS_HordeModeManager* GetHordeModeManager(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static UIGS_HordeModeManager* GetHordeModeManager(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddTokensToAllPlayers(const UObject* inWCO, int32 inTokensCount);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddTokensToAllPlayers(const UObject* inWCO, int32 inTokensCount);
     
 };
 

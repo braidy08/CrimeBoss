@@ -33,11 +33,11 @@ public:
     UFUNCTION(BlueprintCallable)
     UMETA_BaseGoal* GetGoalObject(const UObject* inWCO, TSubclassOf<UMETA_BaseGoal> inGoalID);
     
-    UFUNCTION(BlueprintCallable)
-    static void GetGoalIDByGraph(UObject* inWCO, TSoftObjectPtr<UStoryGraphManager> inGraph, bool& outSucceeded, TSubclassOf<UMETA_BaseGoal>& outClass);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void GetGoalIDByGraph(UObject* inWCO, TSoftObjectPtr<UStoryGraphManager> inGraph, bool& outSucceeded, TSubclassOf<UMETA_BaseGoal>& outClass);
     
-    UFUNCTION(BlueprintCallable)
-    static FMETA_GoalTableRow GetGoalData(UObject* inWCO, TSubclassOf<UMETA_BaseGoal> inClass, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FMETA_GoalTableRow GetGoalData(UObject* inWCO, TSubclassOf<UMETA_BaseGoal> inClass, bool& outSucceeded);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FMETA_GoalTableRow GetDataByIndexBP(int32 inIndex, bool& outSucceeded) const;

@@ -12,8 +12,8 @@ class BF_LOADING_API UIGS_ClientTravel : public UBlueprintAsyncActionBase {
 public:
     UIGS_ClientTravel();
 
-    UFUNCTION(BlueprintCallable)
-    static UIGS_ClientTravel* ClientTravel(UObject* inWCO, FName inLevelName);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_ClientTravel* ClientTravel(UObject* inWCO, FName inLevelName);
     
 };
 

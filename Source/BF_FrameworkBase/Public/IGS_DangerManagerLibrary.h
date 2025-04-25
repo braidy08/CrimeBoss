@@ -21,8 +21,8 @@ public:
     UFUNCTION(BlueprintCallable)
     static void RegisterCharacterToDangerSystem(AIGS_GameCharacterFramework* Character, float DangerRadius, const TArray<TSubclassOf<UIGS_DamageTypeBase>>& DamageTypesToFear);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateTemporaryDangerArea(UObject* WCO, const FVector& Location, float DangerRadius, const TSubclassOf<UIGS_DamageTypeBase>& DamageType, float Duration);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=WCO))
+static void CreateTemporaryDangerArea(UObject* WCO, const FVector& Location, float DangerRadius, const TSubclassOf<UIGS_DamageTypeBase>& DamageType, float Duration);
     
 };
 

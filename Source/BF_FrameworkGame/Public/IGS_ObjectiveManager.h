@@ -93,17 +93,17 @@ public:
 
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
-    UFUNCTION(BlueprintCallable)
-    static void UnpauseTimerForTask(UObject* inWCO, FIGS_MissionTask inTask);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void UnpauseTimerForTask(UObject* inWCO, FIGS_MissionTask inTask);
     
-    UFUNCTION(BlueprintCallable)
-    static void ShowCustomObjective(UObject* inWCO, bool inShow);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ShowCustomObjective(UObject* inWCO, bool inShow);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetTaskState(UObject* inWCO, EIGS_ObjectiveState inState, FIGS_MissionTask inMissionTask);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetTaskState(UObject* inWCO, EIGS_ObjectiveState inState, FIGS_MissionTask inMissionTask);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetTaskCountToComplete(UObject* inWCO, int32 inCountToComplete, FIGS_MissionTask inMissionTask);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetTaskCountToComplete(UObject* inWCO, int32 inCountToComplete, FIGS_MissionTask inMissionTask);
     
     UFUNCTION(BlueprintCallable)
     void SetObjectiveState(int32 inID, EIGS_ObjectiveState inState);
@@ -111,23 +111,23 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SetObjectiveComponentState(UIGS_ObjectiveComponent* InComponent, EIGS_ObjectiveState inState, bool inForceMissionTaskStateChange);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetCustomObjectiveText(UObject* inWCO, FText InText);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetCustomObjectiveText(UObject* inWCO, FText InText);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetCustomObjectiveShowProgressBar(UObject* inWCO, bool inShow);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetCustomObjectiveShowProgressBar(UObject* inWCO, bool inShow);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetCustomObjectiveGoalValue(UObject* inWCO, int32 InValue);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetCustomObjectiveGoalValue(UObject* inWCO, int32 InValue);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetCustomObjectiveCurrentValue(UObject* inWCO, int32 InValue);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetCustomObjectiveCurrentValue(UObject* inWCO, int32 InValue);
     
     UFUNCTION(BlueprintCallable)
     void SetCleanExecutionState(EIGS_CleanExecutionState inState);
     
-    UFUNCTION(BlueprintCallable)
-    static void PauseTimerForTask(UObject* inWCO, FIGS_MissionTask inTask);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void PauseTimerForTask(UObject* inWCO, FIGS_MissionTask inTask);
     
     UFUNCTION(BlueprintCallable)
     void OnTimerPassed(int32 inID);
@@ -177,14 +177,14 @@ public:
     UFUNCTION(BlueprintCallable)
     void OnActiveObjectiveChanged(int32 inID) const;
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_MissionTask GetTaskCopyByID(UObject* inWCO, int32 inID, bool& outSuccess);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_MissionTask GetTaskCopyByID(UObject* inWCO, int32 inID, bool& outSuccess);
     
-    UFUNCTION(BlueprintCallable)
-    static UIGS_ObjectiveManager* GetObjectiveManager(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_ObjectiveManager* GetObjectiveManager(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_MissionObjective GetObjectiveCopyByID(UObject* inWCO, int32 inID, bool& outSuccess);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_MissionObjective GetObjectiveCopyByID(UObject* inWCO, int32 inID, bool& outSuccess);
     
     UFUNCTION(BlueprintCallable)
     static EIGS_ObjectiveState GetObjectiveComponentState(UIGS_ObjectiveComponent* InComponent);
@@ -192,44 +192,44 @@ public:
     UFUNCTION(BlueprintCallable)
     UIGS_ObjectiveComponent* GetObjectiveComponent(EIGS_ObjectiveComponentType inType);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_MissionObjective GetActiveObjective(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_MissionObjective GetActiveObjective(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateTimerTask(UObject* inWCO, float inDuration, FText inTaskName, bool bCrucialTask, bool bOptionalTask, FTaskChanged inDelegateHandle, FIGS_MissionTask& outObjectiveStruct);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateTimerTask(UObject* inWCO, float inDuration, FText inTaskName, bool bCrucialTask, bool bOptionalTask, FTaskChanged inDelegateHandle, FIGS_MissionTask& outObjectiveStruct);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateTaskForSpecificObjectiveComponent(UObject* inWCO, UIGS_ObjectiveComponent* InComponent, FText inTaskName, bool bWatchWhenInactive, bool bCrucialTask, bool bOptionalTask, FTaskChanged inDelegateHandle, FIGS_MissionTask& outObjectiveStruct);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateTaskForSpecificObjectiveComponent(UObject* inWCO, UIGS_ObjectiveComponent* InComponent, FText inTaskName, bool bWatchWhenInactive, bool bCrucialTask, bool bOptionalTask, FTaskChanged inDelegateHandle, FIGS_MissionTask& outObjectiveStruct);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateTaskForObjectiveTypeWithCount(UObject* inWCO, EIGS_ObjectiveComponentType inType, FText inTaskName, bool bIncludeAll, bool bWatchWhenInactive, int32 inCountToFinish, bool bCrucialTask, bool bOptionalTask, FTaskChanged inDelegateHandle, FIGS_MissionTask& outObjectiveStruct, bool& outSuccess, EIGS_TaskTimerType inTaskTimerType, float inDuration);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateTaskForObjectiveTypeWithCount(UObject* inWCO, EIGS_ObjectiveComponentType inType, FText inTaskName, bool bIncludeAll, bool bWatchWhenInactive, int32 inCountToFinish, bool bCrucialTask, bool bOptionalTask, FTaskChanged inDelegateHandle, FIGS_MissionTask& outObjectiveStruct, bool& outSuccess, EIGS_TaskTimerType inTaskTimerType, float inDuration);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateTaskForObjectiveType(UObject* inWCO, EIGS_ObjectiveComponentType inType, FText inTaskName, bool bIncludeAll, bool bWatchWhenInactive, int32 inCountToFinish, bool bCrucialTask, bool bOptionalTask, FTaskChanged inDelegateHandle, FIGS_MissionTask& outObjectiveStruct, bool& outSuccess, EIGS_TaskTimerType inTaskTimerType, float inDuration);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateTaskForObjectiveType(UObject* inWCO, EIGS_ObjectiveComponentType inType, FText inTaskName, bool bIncludeAll, bool bWatchWhenInactive, int32 inCountToFinish, bool bCrucialTask, bool bOptionalTask, FTaskChanged inDelegateHandle, FIGS_MissionTask& outObjectiveStruct, bool& outSuccess, EIGS_TaskTimerType inTaskTimerType, float inDuration);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateSimpleObjective(UObject* inWCO, FText inObjectiveName, EIGS_ObjectiveComponentType inType, bool bWatchWhenInactive, bool bFinishWhenInactive, int32 inCountToComplete, FOnObjectiveStateChanged inDelegateHandle, FIGS_MissionObjective& outObjectiveStruct, FIGS_MissionTask& outTaskStruct, bool& outSuccess, EIGS_TaskTimerType inTaskTimerType, float inTimerDuration);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateSimpleObjective(UObject* inWCO, FText inObjectiveName, EIGS_ObjectiveComponentType inType, bool bWatchWhenInactive, bool bFinishWhenInactive, int32 inCountToComplete, FOnObjectiveStateChanged inDelegateHandle, FIGS_MissionObjective& outObjectiveStruct, FIGS_MissionTask& outTaskStruct, bool& outSuccess, EIGS_TaskTimerType inTaskTimerType, float inTimerDuration);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateSimpleLootObjective(UObject* inWCO, FText inObjectiveName, int32 inValueToLoot, FOnObjectiveStateChanged inDelegateHandle, FIGS_MissionObjective& outObjectiveStruct, FIGS_MissionTask& outTaskStruct, bool& outSuccess, EIGS_TaskTimerType inTaskTimerType, float inTimerDuration, bool bPocketLoot);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateSimpleLootObjective(UObject* inWCO, FText inObjectiveName, int32 inValueToLoot, FOnObjectiveStateChanged inDelegateHandle, FIGS_MissionObjective& outObjectiveStruct, FIGS_MissionTask& outTaskStruct, bool& outSuccess, EIGS_TaskTimerType inTaskTimerType, float inTimerDuration, bool bPocketLoot);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateOrTask(UObject* inWCO, FIGS_MissionTask inTaskA, FIGS_MissionTask inTaskB, FOnOrTaskStateChanged inDelegateHandle, FIGS_MissionTask& outTaskStruct);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateOrTask(UObject* inWCO, FIGS_MissionTask inTaskA, FIGS_MissionTask inTaskB, FOnOrTaskStateChanged inDelegateHandle, FIGS_MissionTask& outTaskStruct);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateObjective(UObject* inWCO, FText inObjectiveName, TArray<FIGS_MissionTask> inMissionTasks, FOnObjectiveStateChanged inDelegateHandle, FIGS_MissionObjective& outObjectiveStruct, bool inSimpleObjective, bool inSimpleObjectiveWatchWhenInactive, bool inSimpleObjectFinishWhenInactive);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateObjective(UObject* inWCO, FText inObjectiveName, TArray<FIGS_MissionTask> inMissionTasks, FOnObjectiveStateChanged inDelegateHandle, FIGS_MissionObjective& outObjectiveStruct, bool inSimpleObjective, bool inSimpleObjectiveWatchWhenInactive, bool inSimpleObjectFinishWhenInactive);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateLootTask(UObject* inWCO, FText inTaskName, float inGoalWeight, bool bCrucialTask, bool bOptionalTask, bool bPocketTask, FTaskChanged inDelegateHandle, FIGS_MissionTask& outObjectiveStruct, EIGS_TaskTimerType inTaskTimerType, float inDuration);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateLootTask(UObject* inWCO, FText inTaskName, float inGoalWeight, bool bCrucialTask, bool bOptionalTask, bool bPocketTask, FTaskChanged inDelegateHandle, FIGS_MissionTask& outObjectiveStruct, EIGS_TaskTimerType inTaskTimerType, float inDuration);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateKillTask(UObject* inWCO, EIGS_TeamSideEnum inTeamSide, FText inTaskName, int32 inKillCount, bool bCrucialTask, bool bOptionalTask, FTaskChanged inDelegateHandle, FIGS_MissionTask& outObjectiveStruct, bool inWatchWhenInactive, EIGS_TaskTimerType inTaskTimerType, float inTimerDuration);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateKillTask(UObject* inWCO, EIGS_TeamSideEnum inTeamSide, FText inTaskName, int32 inKillCount, bool bCrucialTask, bool bOptionalTask, FTaskChanged inDelegateHandle, FIGS_MissionTask& outObjectiveStruct, bool inWatchWhenInactive, EIGS_TaskTimerType inTaskTimerType, float inTimerDuration);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddTaskToObjective(UObject* inWCO, FIGS_MissionTask inTaskStruct, FIGS_MissionObjective inObjective);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddTaskToObjective(UObject* inWCO, FIGS_MissionTask inTaskStruct, FIGS_MissionObjective inObjective);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddObjective(UObject* inWCO, FIGS_MissionObjective inObjectiveID);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddObjective(UObject* inWCO, FIGS_MissionObjective inObjectiveID);
     
 };
 

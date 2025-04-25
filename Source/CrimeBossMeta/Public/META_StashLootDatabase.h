@@ -13,8 +13,8 @@ class CRIMEBOSSMETA_API UMETA_StashLootDatabase : public UGameInstanceSubsystem 
 public:
     UMETA_StashLootDatabase();
 
-    UFUNCTION(BlueprintCallable)
-    static FStashLootDefinitionRow GetLootData(UObject* inWCO, const FGameplayTag inLoot, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FStashLootDefinitionRow GetLootData(UObject* inWCO, const FGameplayTag inLoot, bool& outSucceeded);
     
 };
 

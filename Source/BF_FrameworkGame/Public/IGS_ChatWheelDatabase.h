@@ -22,8 +22,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetIndex(FGameplayTag inID) const;
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_ChatWheelDataRow GetDataChatWheel(UObject* inWCO, FGameplayTag inID, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_ChatWheelDataRow GetDataChatWheel(UObject* inWCO, FGameplayTag inID, bool& outSucceeded);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FIGS_ChatWheelDataRow GetDataByIndexBP(int32 inIndex, bool& outSucceeded) const;

@@ -13,8 +13,8 @@ class COMMON_DATA_API UIGS_ChallengesDatabase : public UGameInstanceSubsystem {
 public:
     UIGS_ChallengesDatabase();
 
-    UFUNCTION(BlueprintCallable)
-    static FIGS_ChallengeTableRow GetChallenge(UObject* inWCO, FGameplayTag inTagID, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_ChallengeTableRow GetChallenge(UObject* inWCO, FGameplayTag inTagID, bool& outSucceeded);
     
 };
 

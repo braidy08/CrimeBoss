@@ -58,8 +58,8 @@ public:
     UFUNCTION(BlueprintCallable)
     void PlayMedia();
     
-    UFUNCTION(BlueprintCallable)
-    static UIGS_PlayBinkMedia* PlayBinkMedia(UObject* inWCO, UBinkMediaPlayer* inBinkMediaPlayer, bool inAutoStart, bool inAddToScreenHandler);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_PlayBinkMedia* PlayBinkMedia(UObject* inWCO, UBinkMediaPlayer* inBinkMediaPlayer, bool inAutoStart, bool inAddToScreenHandler);
     
 protected:
     UFUNCTION(BlueprintCallable)

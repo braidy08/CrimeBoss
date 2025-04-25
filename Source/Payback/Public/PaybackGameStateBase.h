@@ -130,8 +130,8 @@ protected:
     int32 SetHeisterNumberForBotBP(AController* inBot, int32 inHeisterID);
     
 public:
-    UFUNCTION(BlueprintCallable)
-    static void SetFinalDialogue(UObject* inWCO, const FText inID, AActor* inCharacter);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetFinalDialogue(UObject* inWCO, const FText inID, AActor* inCharacter);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void PostInit();

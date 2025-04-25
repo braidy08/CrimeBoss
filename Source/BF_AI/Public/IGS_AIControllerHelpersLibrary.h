@@ -52,11 +52,11 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SetScope(AIGS_AIControllerGame* Controller, uint8 scope);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetGlobalSniperPointOfInterestPos(const UObject* inWCO, FVector InPosition);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetGlobalSniperPointOfInterestPos(const UObject* inWCO, FVector InPosition);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetGlobalSniperPointOfInterestActor(const UObject* inWCO, AActor* inActor);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetGlobalSniperPointOfInterestActor(const UObject* inWCO, AActor* inActor);
     
     UFUNCTION(BlueprintCallable)
     static void SendStimuliToFriends(AIGS_GameCharacterFramework* Instigator, EStimuliType stimuliType, FIGS_StimuliData stimuliData, float Range);
@@ -109,8 +109,8 @@ public:
     UFUNCTION(BlueprintCallable)
     static FVector GetNextPathPoint(AAIController* Controller);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<AIGS_MonsterCloset*> GetMonsterClosetsInBox(UObject* inWCO, FVector inOrigin, FVector InBoxExtent);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<AIGS_MonsterCloset*> GetMonsterClosetsInBox(UObject* inWCO, FVector inOrigin, FVector InBoxExtent);
     
     UFUNCTION(BlueprintCallable)
     static FVector GetLastOrClosestPosOnNavmesh(AActor* inActor);
@@ -127,8 +127,8 @@ public:
     UFUNCTION(BlueprintCallable)
     static void FocusToOffence(AIGS_AIControllerBase* InController, UIGS_OffenceData* inOffence);
     
-    UFUNCTION(BlueprintCallable)
-    static void DeactivateHeistersDefend(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void DeactivateHeistersDefend(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     static bool CanShootAtHiddenPos(AAIController* InController, FVector& outPos);

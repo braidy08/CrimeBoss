@@ -13,8 +13,8 @@ class CRIMEBOSSMETA_API UMETA_TradeVendorDatabase : public UGameInstanceSubsyste
 public:
     UMETA_TradeVendorDatabase();
 
-    UFUNCTION(BlueprintCallable)
-    static FMETA_TradeVendorTableRow GetTradeVendorData(UObject* inWCO, const EMETA_TradeVendor inTradeVendor, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FMETA_TradeVendorTableRow GetTradeVendorData(UObject* inWCO, const EMETA_TradeVendor inTradeVendor, bool& outSucceeded);
     
 };
 

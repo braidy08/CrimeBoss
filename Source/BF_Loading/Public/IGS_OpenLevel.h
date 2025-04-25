@@ -22,8 +22,8 @@ public:
     
     UIGS_OpenLevel();
 
-    UFUNCTION(BlueprintCallable)
-    static UIGS_OpenLevel* OpenLevel(UObject* inWCO, FName inLevelName, bool inAbsolute, const FString& inOptions);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_OpenLevel* OpenLevel(UObject* inWCO, FName inLevelName, bool inAbsolute, const FString& inOptions);
     
 protected:
     UFUNCTION(BlueprintCallable)

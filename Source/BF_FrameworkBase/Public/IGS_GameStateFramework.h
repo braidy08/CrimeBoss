@@ -93,17 +93,17 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetIsEndMission(const bool inEndMission);
     
-    UFUNCTION(BlueprintCallable)
-    static void RemoveSecuredLoot(UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClass);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void RemoveSecuredLoot(UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClass);
     
-    UFUNCTION(BlueprintCallable)
-    static void RemoveReservedLoot(UObject* inWCO, FGameplayTag inLootType);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void RemoveReservedLoot(UObject* inWCO, FGameplayTag inLootType);
     
-    UFUNCTION(BlueprintCallable)
-    static void RemovedPocketLoot(UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClass);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void RemovedPocketLoot(UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClass);
     
-    UFUNCTION(BlueprintCallable)
-    static void RemoveBonusLoot(UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClass);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void RemoveBonusLoot(UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClass);
     
     UFUNCTION(BlueprintCallable)
     void RecalculateBaggedLoot();
@@ -196,32 +196,32 @@ public:
     UFUNCTION(BlueprintCallable)
     bool ArePlayersImmortal();
     
-    UFUNCTION(BlueprintCallable)
-    static void AddSecuredLootBag(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddSecuredLootBag(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddSecuredLoot(UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClass, AIGS_GameCharacterFramework* OwningPawn);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddSecuredLoot(UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClass, AIGS_GameCharacterFramework* OwningPawn);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddReservedLoot(UObject* inWCO, FGameplayTag inLootType, int32 inPercentage);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddReservedLoot(UObject* inWCO, FGameplayTag inLootType, int32 inPercentage);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddPocketLoot(UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClass);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddPocketLoot(UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClass);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddLootBag(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddLootBag(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddCarryablePocketLoot(UObject* inWCO, TSubclassOf<UIGS_CarryableInventoryObject> inItemClass);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddCarryablePocketLoot(UObject* inWCO, TSubclassOf<UIGS_CarryableInventoryObject> inItemClass);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddCarryablePickedUpLoot(UObject* inWCO, TSubclassOf<UIGS_CarryableInventoryObject> inItemClass);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddCarryablePickedUpLoot(UObject* inWCO, TSubclassOf<UIGS_CarryableInventoryObject> inItemClass);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddBonusPocketLoot(UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClass);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddBonusPocketLoot(UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClass);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddBonusLoot(UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClass, AIGS_GameCharacterFramework* OwningPawn);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddBonusLoot(UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClass, AIGS_GameCharacterFramework* OwningPawn);
     
 };
 

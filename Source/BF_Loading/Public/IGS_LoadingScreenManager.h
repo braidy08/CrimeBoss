@@ -34,34 +34,34 @@ protected:
 public:
     UIGS_LoadingScreenManager();
 
-    UFUNCTION(BlueprintCallable)
-    static void SetLoadingScreenSetupType(UObject* inWCO, FGameplayTag inTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetLoadingScreenSetupType(UObject* inWCO, FGameplayTag inTag);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetLoadingScreenSecondaryText(UObject* inWCO, FText InText);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetLoadingScreenSecondaryText(UObject* inWCO, FText InText);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetLoadingScreenMainText(UObject* inWCO, FText InText);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetLoadingScreenMainText(UObject* inWCO, FText InText);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetLoadingScreenBackgroundTexture(UObject* inWCO, TSoftObjectPtr<UTexture> inBackgroundTexture);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetLoadingScreenBackgroundTexture(UObject* inWCO, TSoftObjectPtr<UTexture> inBackgroundTexture);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetDebugState(UObject* inWCO, bool inState);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetDebugState(UObject* inWCO, bool inState);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetAdditionalLoadingScreenTips(UObject* inWCO, FGameplayTagContainer inTagContainer);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetAdditionalLoadingScreenTips(UObject* inWCO, FGameplayTagContainer inTagContainer);
     
 protected:
     UFUNCTION(BlueprintCallable)
     void OnInputDeviceChanged(EIGS_InputDevice inInputDevice);
     
 public:
-    UFUNCTION(BlueprintCallable)
-    static bool IsLoadingScreenSetupTypeSet(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool IsLoadingScreenSetupTypeSet(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static bool GetDebugState(UObject* inWCO, bool inState);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool GetDebugState(UObject* inWCO, bool inState);
     
 };
 

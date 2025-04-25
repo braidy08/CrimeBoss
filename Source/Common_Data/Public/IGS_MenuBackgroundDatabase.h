@@ -33,8 +33,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetIndex(FGameplayTag inID) const;
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_MenuBackgroundTableRow GetDataMenuBackground(UObject* inWCO, FGameplayTag inID, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_MenuBackgroundTableRow GetDataMenuBackground(UObject* inWCO, FGameplayTag inID, bool& outSucceeded);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FIGS_MenuBackgroundTableRow GetDataByIndexBP(int32 inIndex, bool& outSucceeded) const;

@@ -64,8 +64,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAnyTutorialOpened() const;
     
-    UFUNCTION(BlueprintCallable)
-    static UIGS_TutorialsManager* GetTutorialsManager(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_TutorialsManager* GetTutorialsManager(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetTutorialsEnabled() const;

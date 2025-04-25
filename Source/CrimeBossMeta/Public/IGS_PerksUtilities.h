@@ -15,26 +15,26 @@ class CRIMEBOSSMETA_API UIGS_PerksUtilities : public UBlueprintFunctionLibrary {
 public:
     UIGS_PerksUtilities();
 
-    UFUNCTION(BlueprintCallable)
-    static void RemovePerksGroupFromNewPending(UObject* inWCO, const FGameplayTag inPerkTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void RemovePerksGroupFromNewPending(UObject* inWCO, const FGameplayTag inPerkTag);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static int32 GetUnlockedPerkGroupsCount(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static int32 GetUnlockedPerkGroupsCount(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static int32 GetUnlockablePerkGroupsCount(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static int32 GetUnlockablePerkGroupsCount(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static TArray<UMETA_Perk*> GetPerksOnFirstLevel(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static TArray<UMETA_Perk*> GetPerksOnFirstLevel(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FIGS_PerkGroup GetPerkGroupByPerkTag(const FGameplayTag inTag, UPARAM(Ref) TArray<FIGS_PerkGroup>& inPerkGroups);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static TArray<FIGS_PerkGroup> GetAllPerksGroups(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static TArray<FIGS_PerkGroup> GetAllPerksGroups(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static UMETA_Perk* CreatePerkObject(UObject* inWCO, FIGS_PerksTableRow inPerkRow);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static UMETA_Perk* CreatePerkObject(UObject* inWCO, FIGS_PerksTableRow inPerkRow);
     
 };
 

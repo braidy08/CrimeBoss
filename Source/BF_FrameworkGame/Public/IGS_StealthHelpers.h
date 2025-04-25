@@ -16,11 +16,11 @@ class BF_FRAMEWORKGAME_API UIGS_StealthHelpers : public UBlueprintFunctionLibrar
 public:
     UIGS_StealthHelpers();
 
-    UFUNCTION(BlueprintCallable)
-    static void WholeMissionIsTresspassing(UObject* inWCO, bool securityArea);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void WholeMissionIsTresspassing(UObject* inWCO, bool securityArea);
     
-    UFUNCTION(BlueprintCallable)
-    static void TresspassingAllowed(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void TresspassingAllowed(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     static void ReportVaultOpeningStart(AActor* inVaultActor, FVector inLobyPosition);
@@ -82,20 +82,20 @@ public:
     UFUNCTION(BlueprintCallable)
     static void ReportBash(AIGS_GameCharacterFramework* inInstigator);
     
-    UFUNCTION(BlueprintCallable)
-    static void ReportAlarmSirens(UObject* inWCO, FVector InLocation, float inLoudness);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ReportAlarmSirens(UObject* inWCO, FVector InLocation, float inLoudness);
     
     UFUNCTION(BlueprintCallable)
     static bool IsTrespassing(const AIGS_GameCharacterFramework* inCharacter);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateLockpickedEvents(UObject* inWCO, FVector InLocation, AActor* inInstigator);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateLockpickedEvents(UObject* inWCO, FVector InLocation, AActor* inInstigator);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateBrokenEventsTwoSided(UObject* inWCO, FVector InLocation, FVector inForward, AActor* inInstigator, bool inIsImportant);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateBrokenEventsTwoSided(UObject* inWCO, FVector InLocation, FVector inForward, AActor* inInstigator, bool inIsImportant);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateBrokenEvents(UObject* inWCO, FVector InLocation, AActor* inInstigator, bool inIsImportant, float inLoudness);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateBrokenEvents(UObject* inWCO, FVector InLocation, AActor* inInstigator, bool inIsImportant, float inLoudness);
     
 };
 

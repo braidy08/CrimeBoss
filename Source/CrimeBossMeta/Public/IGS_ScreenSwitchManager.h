@@ -26,8 +26,8 @@ public:
     
     UIGS_ScreenSwitchManager(const FObjectInitializer& ObjectInitializer);
 
-    UFUNCTION(BlueprintCallable)
-    static void TriggerAdditionalAction(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void TriggerAdditionalAction(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetConfirmButtonVisibility(bool inVisible);
@@ -41,17 +41,17 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetAdditionalButtonType(EIGS_MetaAdditionalButtonType inType);
     
-    UFUNCTION(BlueprintCallable)
-    static void RequestSwitchToScreen(UObject* inWCO, FGameplayTag inTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void RequestSwitchToScreen(UObject* inWCO, FGameplayTag inTag);
     
-    UFUNCTION(BlueprintCallable)
-    static UIGS_ScreenSwitchManager* Instance(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_ScreenSwitchManager* Instance(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void GoBack(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void GoBack(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void Confirm(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void Confirm(UObject* inWCO);
     
 };
 

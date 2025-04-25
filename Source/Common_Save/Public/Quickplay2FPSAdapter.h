@@ -13,8 +13,8 @@ class COMMON_SAVE_API UQuickplay2FPSAdapter : public UBlueprintFunctionLibrary {
 public:
     UQuickplay2FPSAdapter();
 
-    UFUNCTION(BlueprintCallable)
-    static void TransferDataToFPS(const UObject* inWCO, FIGS_SharedMetaTransfer_Data inSharedData, FIGS_Meta2FPS_Data inQuickplayData);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void TransferDataToFPS(const UObject* inWCO, FIGS_SharedMetaTransfer_Data inSharedData, FIGS_Meta2FPS_Data inQuickplayData);
     
 };
 

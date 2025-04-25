@@ -14,8 +14,8 @@ class COMMON_DATA_API UCommonMissionsDatabase : public UGameInstanceSubsystem {
 public:
     UCommonMissionsDatabase();
 
-    UFUNCTION(BlueprintCallable)
-    static FCommonMissionDataBase GetBaseMissionDataBP(const UObject* inWCO, const TSubclassOf<UIGS_BaseMissionObject>& inClass, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FCommonMissionDataBase GetBaseMissionDataBP(const UObject* inWCO, const TSubclassOf<UIGS_BaseMissionObject>& inClass, bool& outSucceeded);
     
 };
 

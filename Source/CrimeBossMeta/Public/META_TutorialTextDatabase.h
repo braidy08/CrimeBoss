@@ -41,8 +41,8 @@ public:
     UFUNCTION(BlueprintCallable)
     bool IsAnyTagsActive(FGameplayTagContainer inTagContainer, bool inExactMatch);
     
-    UFUNCTION(BlueprintCallable)
-    static FMETA_TutorialTextTableRow GetTutorialTextData(UObject* inWCO, const FGameplayTag inTag, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FMETA_TutorialTextTableRow GetTutorialTextData(UObject* inWCO, const FGameplayTag inTag, bool& outSucceeded);
     
     UFUNCTION(BlueprintCallable)
     void AddActiveTag(FGameplayTag inTag, bool inPersistent);

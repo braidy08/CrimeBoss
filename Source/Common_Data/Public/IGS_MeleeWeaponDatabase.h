@@ -17,8 +17,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetIndex(const TSubclassOf<UIGS_MeleeWeaponInventoryObject>& inClass) const;
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_MeleeWeaponTableRow GetDataMeleeWeapon(UObject* inWCO, const TSubclassOf<UIGS_MeleeWeaponInventoryObject>& inClass, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_MeleeWeaponTableRow GetDataMeleeWeapon(UObject* inWCO, const TSubclassOf<UIGS_MeleeWeaponInventoryObject>& inClass, bool& outSucceeded);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FIGS_MeleeWeaponTableRow GetDataByIndexBP(int32 inIndex, bool& outSucceeded) const;

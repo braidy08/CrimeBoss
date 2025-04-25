@@ -44,11 +44,11 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetScenicMusicPack(UAkStateValue* inMusicPack);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetPauseMusic(UObject* inWCO, bool inState);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetPauseMusic(UObject* inWCO, bool inState);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetMusicSongPlaylist(UObject* inWCO, TArray<UIGS_MusicSongDataAsset*> inPlaylist);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetMusicSongPlaylist(UObject* inWCO, TArray<UIGS_MusicSongDataAsset*> inPlaylist);
     
     UFUNCTION(BlueprintCallable)
     void SetMusicScenicEnabled(bool inState);

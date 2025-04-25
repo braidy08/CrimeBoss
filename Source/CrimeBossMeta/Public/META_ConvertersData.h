@@ -43,8 +43,8 @@ class CRIMEBOSSMETA_API UMETA_ConvertersData : public UBlueprintFunctionLibrary 
 public:
     UMETA_ConvertersData();
 
-    UFUNCTION(BlueprintCallable)
-    static FGameplayTagContainer GetCharactersTagFromSaveForCrew(UObject* inWCO, UPARAM(Ref) TArray<FMETA_HeisterSaveData>& inUniqueCharacters);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FGameplayTagContainer GetCharactersTagFromSaveForCrew(UObject* inWCO, UPARAM(Ref) TArray<FMETA_HeisterSaveData>& inUniqueCharacters);
     
     UFUNCTION(BlueprintCallable)
     static TArray<FMETA_WeaponSaveData> ConvertWeaponsToSave2(UPARAM(Ref) TArray<UMETA_Weapon*>& inWeapons);
@@ -55,20 +55,20 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<FMETA_WeaponSkinSaveData> ConvertWeaponSkinsDataToSave(UPARAM(Ref) TArray<UMETA_WeaponSkin*>& inWeaponSkinsPool);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_WeaponSkin*> ConvertWeaponSkinsDataFromSave(UObject* inWCO, TArray<FMETA_WeaponSkinSaveData> inWeaponSkinsSaveData);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_WeaponSkin*> ConvertWeaponSkinsDataFromSave(UObject* inWCO, TArray<FMETA_WeaponSkinSaveData> inWeaponSkinsSaveData);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_Weapon*> ConvertWeaponsFromSave2(UObject* inWCO, const TArray<FMETA_WeaponSaveData>& inWeapons);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_Weapon*> ConvertWeaponsFromSave2(UObject* inWCO, const TArray<FMETA_WeaponSaveData>& inWeapons);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_Weapon*> ConvertWeaponsFromSave(UObject* inWCO, const TMap<TSubclassOf<UMETA_WeaponInventoryObject>, FMETA_WeaponSaveData>& inWeapons);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_Weapon*> ConvertWeaponsFromSave(UObject* inWCO, const TMap<TSubclassOf<UMETA_WeaponInventoryObject>, FMETA_WeaponSaveData>& inWeapons);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_Weapon*> ConvertWeaponsArrayFromSave(UObject* inWCO, const TMap<TSubclassOf<UMETA_WeaponInventoryObject>, FMETA_WeaponSaveData>& inWeapons);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_Weapon*> ConvertWeaponsArrayFromSave(UObject* inWCO, const TMap<TSubclassOf<UMETA_WeaponInventoryObject>, FMETA_WeaponSaveData>& inWeapons);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_Character*> ConvertUniqueCharactersFromSaveForBlackmarket(UObject* inWCO, EMETA_RespectLvl inBossRespect, UPARAM(Ref) TArray<FMETA_HeisterSaveData>& inUniqueCharacters);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_Character*> ConvertUniqueCharactersFromSaveForBlackmarket(UObject* inWCO, EMETA_RespectLvl inBossRespect, UPARAM(Ref) TArray<FMETA_HeisterSaveData>& inUniqueCharacters);
     
     UFUNCTION(BlueprintCallable)
     static TMap<FGameplayTag, FMETA_TileSaveData> ConvertTilesDataToSave(UPARAM(Ref) TMap<FGameplayTag, UMapTile*>& inTiles);
@@ -76,20 +76,20 @@ public:
     UFUNCTION(BlueprintCallable)
     static void ConvertTilesDataFromSave(UPARAM(Ref) TMap<FGameplayTag, UMapTile*>& inTiles, TMap<FGameplayTag, FMETA_TileSaveData> inTilesSaveData);
     
-    UFUNCTION(BlueprintCallable)
-    static TMap<TSubclassOf<UMETA_WeaponInventoryObject>, FMETA_WeaponAmountInfo> ConvertStashWeaponsFromSave(UObject* inWCO, const TMap<TSubclassOf<UMETA_WeaponInventoryObject>, FMETA_WeaponSaveDataArray>& inWeapons);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TMap<TSubclassOf<UMETA_WeaponInventoryObject>, FMETA_WeaponAmountInfo> ConvertStashWeaponsFromSave(UObject* inWCO, const TMap<TSubclassOf<UMETA_WeaponInventoryObject>, FMETA_WeaponSaveDataArray>& inWeapons);
     
     UFUNCTION(BlueprintCallable)
     static TArray<FMETA_PerkSaveData> ConvertPerksDataToSave(UPARAM(Ref) TArray<UMETA_Perk*>& inPerksPool);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_Perk*> ConvertPerksDataFromSave(UObject* inWCO, TArray<FMETA_PerkSaveData> inPerksSaveData);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_Perk*> ConvertPerksDataFromSave(UObject* inWCO, TArray<FMETA_PerkSaveData> inPerksSaveData);
     
     UFUNCTION(BlueprintCallable)
     static FMETA_MissionsSave ConvertMissionsToSave(TArray<UMETA_BaseMission*> inMissions, TArray<UMETA_BaseMission*> inTurfMissions);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_BaseMission*> ConvertMissionsFromSave(const UObject* inWCO, UPARAM(Ref) FMETA_MissionsSave& inMissions, TArray<UMETA_BaseMission*>& outTurfWarMissions);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_BaseMission*> ConvertMissionsFromSave(const UObject* inWCO, UPARAM(Ref) FMETA_MissionsSave& inMissions, TArray<UMETA_BaseMission*>& outTurfWarMissions);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void ConvertMissionResultMeta2FPS(EMETA_JobResult MetaResult, ECommonMissionResult& FPSResult);
@@ -97,8 +97,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void ConvertMissionResultFPS2Meta(ECommonMissionResult FPSResult, EMETA_JobResult& MetaResult);
     
-    UFUNCTION(BlueprintCallable)
-    static void ConvertLootFromFPS(UObject* inWCO, UPARAM(Ref) TArray<TSubclassOf<UIGS_LootItemInventoryObject>>& inLoot, TMap<FGameplayTag, int32>& outMetaLoot, int32& CashLoot);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ConvertLootFromFPS(UObject* inWCO, UPARAM(Ref) TArray<TSubclassOf<UIGS_LootItemInventoryObject>>& inLoot, TMap<FGameplayTag, int32>& outMetaLoot, int32& CashLoot);
     
     UFUNCTION(BlueprintCallable)
     static TMap<TSubclassOf<UMETA_WeaponInventoryObject>, FMETA_WeaponSaveData> ConvertLiveWeaponsToSave(UPARAM(Ref) TArray<UMETA_Weapon*>& inWeapons);
@@ -112,8 +112,8 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<FMETA_GraphStruct> ConvertGraphInfoFromSave(UPARAM(Ref) TArray<FMETA_GraphStructSave>& inGraphInfo);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_Character*> ConvertGenericCharactersFromSave(UObject* inWCO, UPARAM(Ref) TArray<FMETA_GenericCharacterSave>& inGenericCharacters);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_Character*> ConvertGenericCharactersFromSave(UObject* inWCO, UPARAM(Ref) TArray<FMETA_GenericCharacterSave>& inGenericCharacters);
     
     UFUNCTION(BlueprintCallable)
     static TArray<FMETA_EquipmentSaveData> ConvertEquipmentToSave2(UPARAM(Ref) TArray<UMETA_Equipment*>& inEquipment);
@@ -121,20 +121,20 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<FMETA_EquipmentSaveData> ConvertEquipmentToSave(UPARAM(Ref) TArray<UMETA_Equipment*>& inEquipment);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_Equipment*> ConvertEquipmentFromSave2(UObject* inWCO, UPARAM(Ref) TMap<TSubclassOf<UIGS_EquipmentInventoryObject>, FMETA_EquipmentSaveData>& inEquipment);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_Equipment*> ConvertEquipmentFromSave2(UObject* inWCO, UPARAM(Ref) TMap<TSubclassOf<UIGS_EquipmentInventoryObject>, FMETA_EquipmentSaveData>& inEquipment);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_Equipment*> ConvertEquipmentFromSave(UObject* inWCO, UPARAM(Ref) TArray<FMETA_EquipmentSaveData>& inEquipment);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_Equipment*> ConvertEquipmentFromSave(UObject* inWCO, UPARAM(Ref) TArray<FMETA_EquipmentSaveData>& inEquipment);
     
     UFUNCTION(BlueprintCallable)
     static void ConvertCharactersToSave(UPARAM(Ref) TArray<UMETA_Character*>& inCharacters, bool inIgnoreUnique, TArray<FMETA_GenericCharacterSave>& outGenericCharacters, TArray<FMETA_HeisterSaveData>& outUniqueCharacters);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_Character*> ConvertCharactersFromSaveForCrew(UObject* inWCO, UPARAM(Ref) TArray<FMETA_GenericCharacterSave>& inGenericCharacters, UPARAM(Ref) TArray<FMETA_HeisterSaveData>& inUniqueCharacters, TArray<FMETA_EquipmentSaveData>& outEquipmentShouldBeAddedToStashByID, TArray<UMETA_Equipment*>& outEquipmentShouldBeAddedToStashByObject);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_Character*> ConvertCharactersFromSaveForCrew(UObject* inWCO, UPARAM(Ref) TArray<FMETA_GenericCharacterSave>& inGenericCharacters, UPARAM(Ref) TArray<FMETA_HeisterSaveData>& inUniqueCharacters, TArray<FMETA_EquipmentSaveData>& outEquipmentShouldBeAddedToStashByID, TArray<UMETA_Equipment*>& outEquipmentShouldBeAddedToStashByObject);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_Character*> ConvertCharactersFromSaveForBlackmarket(UObject* inWCO, EMETA_RespectLvl inBossRespect, UPARAM(Ref) TArray<FMETA_GenericCharacterSave>& inGenericCharacters, UPARAM(Ref) TArray<FMETA_HeisterSaveData>& inUniqueCharacters);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_Character*> ConvertCharactersFromSaveForBlackmarket(UObject* inWCO, EMETA_RespectLvl inBossRespect, UPARAM(Ref) TArray<FMETA_GenericCharacterSave>& inGenericCharacters, UPARAM(Ref) TArray<FMETA_HeisterSaveData>& inUniqueCharacters);
     
     UFUNCTION(BlueprintCallable)
     static void ConvertBossCharacterToSave(const UMETA_BossCharacter* inBossCharacter, FMETA_BossCharacterSave& outBossCharacter);
@@ -145,14 +145,14 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<FMETA_CharacterSkinSaveData> ConvertBossCharacterSkinsDataToSave(UPARAM(Ref) TArray<UMETA_CharacterSkin*>& inBossCharacterSkinsPool);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_CharacterSkin*> ConvertBossCharacterSkinsDataFromSave(UObject* inWCO, TArray<FMETA_CharacterSkinSaveData> inBossCharacterSkinsSaveData);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_CharacterSkin*> ConvertBossCharacterSkinsDataFromSave(UObject* inWCO, TArray<FMETA_CharacterSkinSaveData> inBossCharacterSkinsSaveData);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_BossCharacter*> ConvertBossCharactersFromSave(UObject* inWCO, UPARAM(Ref) TArray<FMETA_BossCharacterSave>& inBossCharacters);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_BossCharacter*> ConvertBossCharactersFromSave(UObject* inWCO, UPARAM(Ref) TArray<FMETA_BossCharacterSave>& inBossCharacters);
     
-    UFUNCTION(BlueprintCallable)
-    static UMETA_BossCharacter* ConvertBossCharacterFromSave(UObject* inWCO, int32 inNumber, UPARAM(Ref) FMETA_BossCharacterSave& inBossCharacter);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UMETA_BossCharacter* ConvertBossCharacterFromSave(UObject* inWCO, int32 inNumber, UPARAM(Ref) FMETA_BossCharacterSave& inBossCharacter);
     
 };
 

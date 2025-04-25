@@ -91,8 +91,8 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SortEquipmentQuality(UPARAM(Ref) TArray<UMETA_Equipment*>& Equipment);
     
-    UFUNCTION(BlueprintCallable)
-    static void SortEquipmentByQuality(UObject* inWCO, UPARAM(Ref) TArray<TSubclassOf<UIGS_EquipmentInventoryObject>>& Equipment);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SortEquipmentByQuality(UObject* inWCO, UPARAM(Ref) TArray<TSubclassOf<UIGS_EquipmentInventoryObject>>& Equipment);
     
     UFUNCTION(BlueprintCallable)
     static void SortBonusesByLevel(UPARAM(Ref) UIGS_BossLevelBaseComponent*& bossLevelManager, UPARAM(Ref) TMap<EMETA_BonusType, float>& Bonuses);

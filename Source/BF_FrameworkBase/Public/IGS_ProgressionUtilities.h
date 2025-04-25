@@ -12,8 +12,8 @@ class BF_FRAMEWORKBASE_API UIGS_ProgressionUtilities : public UBlueprintFunction
 public:
     UIGS_ProgressionUtilities();
 
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static int32 GetMPMoneyRewardValue(UObject* inWCO, const int32 inLevel);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static int32 GetMPMoneyRewardValue(UObject* inWCO, const int32 inLevel);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetMaxCurveTableValue(const UCurveTable* inCurveTable);

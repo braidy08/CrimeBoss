@@ -31,14 +31,14 @@ public:
     UFUNCTION(BlueprintCallable)
     TArray<FMETA_ObjectivePresetTableRow> GetPresetsDatabaseTable();
     
-    UFUNCTION(BlueprintCallable)
-    static FMETA_ObjectivePresetTableRow GetPresetDataBP(const UObject* inWCO, FGameplayTag inID, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FMETA_ObjectivePresetTableRow GetPresetDataBP(const UObject* inWCO, FGameplayTag inID, bool& outSucceeded);
     
     UFUNCTION(BlueprintCallable)
     TArray<FMETA_ObjectiveTableRow> GetObjectivesDatabaseTable();
     
-    UFUNCTION(BlueprintCallable)
-    static FMETA_ObjectiveTableRow GetObjectiveDataBP(const UObject* inWCO, FGameplayTag inID, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FMETA_ObjectiveTableRow GetObjectiveDataBP(const UObject* inWCO, FGameplayTag inID, bool& outSucceeded);
     
 };
 

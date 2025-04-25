@@ -13,8 +13,8 @@ class PAYBACKDEFINITIONS_API UMETA_LogEditorSubsystem : public UGameInstanceSubs
 public:
     UMETA_LogEditorSubsystem();
 
-    UFUNCTION(BlueprintCallable)
-    static void PrintMetaLog(const UObject* inWCO, EMETA_LogCategory inCategory, const FText& inMessage, EMETA_MetaLogVerbosity inVerbosity);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void PrintMetaLog(const UObject* inWCO, EMETA_LogCategory inCategory, const FText& inMessage, EMETA_MetaLogVerbosity inVerbosity);
     
     UFUNCTION(BlueprintCallable)
     static FString GetTimeString();

@@ -61,8 +61,8 @@ public:
     UFUNCTION(BlueprintCallable)
     void RefreshCurrentInputDevice();
     
-    UFUNCTION(BlueprintCallable)
-    static bool IsGamepadActive(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool IsGamepadActive(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EIGS_InputDevice GetCurrentInputDevice() const;

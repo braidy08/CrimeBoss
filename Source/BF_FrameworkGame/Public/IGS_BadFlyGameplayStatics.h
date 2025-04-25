@@ -57,62 +57,62 @@ class BF_FRAMEWORKGAME_API UIGS_BadFlyGameplayStatics : public UIGS_BadFlyGamepl
 public:
     UIGS_BadFlyGameplayStatics();
 
-    UFUNCTION(BlueprintCallable)
-    static bool WasKilledByScript(UObject* inWCO, AActor* inActor);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool WasKilledByScript(UObject* inWCO, AActor* inActor);
     
-    UFUNCTION(BlueprintCallable)
-    static bool WasKilledByDamageType(UObject* inWCO, AActor* inActor, const TSubclassOf<UIGS_DamageTypeBase> inDamageType, const bool inExactMatch);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool WasKilledByDamageType(UObject* inWCO, AActor* inActor, const TSubclassOf<UIGS_DamageTypeBase> inDamageType, const bool inExactMatch);
     
-    UFUNCTION(BlueprintCallable)
-    static void TriggerBotLimbo(const UObject* inWCO, bool inPlayVioceovers);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void TriggerBotLimbo(const UObject* inWCO, bool inPlayVioceovers);
     
-    UFUNCTION(BlueprintCallable)
-    static void TriggerAlarmDelayed(const UObject* inWCO, EIGS_AlarmReason inReason, float inDelay);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void TriggerAlarmDelayed(const UObject* inWCO, EIGS_AlarmReason inReason, float inDelay);
     
-    UFUNCTION(BlueprintCallable)
-    static void TriggerAlarm(const UObject* inWCO, EIGS_AlarmReason inReason);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void TriggerAlarm(const UObject* inWCO, EIGS_AlarmReason inReason);
     
     UFUNCTION(BlueprintCallable)
     static void TogglePlayerEjectPosses();
     
-    UFUNCTION(BlueprintCallable)
-    static void StopWaveManager(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void StopWaveManager(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void StopCopsArriveTimer(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void StopCopsArriveTimer(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void StartWaveManager(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void StartWaveManager(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void StartStorm(const UObject* inWCO, bool inIsInstant, bool inIsEndless);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void StartStorm(const UObject* inWCO, bool inIsInstant, bool inIsEndless);
     
-    UFUNCTION(BlueprintCallable)
-    static void StartRetreat(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void StartRetreat(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void StartPursue(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void StartPursue(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void StartHunt(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void StartHunt(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void StartCopsArriveTimer(UObject* inWCO, float InTime);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void StartCopsArriveTimer(UObject* inWCO, float InTime);
     
-    UFUNCTION(BlueprintCallable)
-    static void StartBreak(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void StartBreak(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static AIGS_SuspicionEventActor* SpawnSuspicionEventActorAttachedToComp(const UObject* inWCO, USceneComponent* inAttachTo, AIGS_GameCharacterFramework* inCauser, const FGameplayTagContainer& inOffences, TArray<AIGS_GameCharacterFramework*> inIgnoredBy, FName InBoneName);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static AIGS_SuspicionEventActor* SpawnSuspicionEventActorAttachedToComp(const UObject* inWCO, USceneComponent* inAttachTo, AIGS_GameCharacterFramework* inCauser, const FGameplayTagContainer& inOffences, TArray<AIGS_GameCharacterFramework*> inIgnoredBy, FName InBoneName);
     
-    UFUNCTION(BlueprintCallable)
-    static AIGS_SuspicionEventActor* SpawnSuspicionEventActorAttached(const UObject* inWCO, AActor* inAttachTo, AIGS_GameCharacterFramework* inCauser, const FGameplayTagContainer& inOffences, TArray<AIGS_GameCharacterFramework*> inIgnoredBy);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static AIGS_SuspicionEventActor* SpawnSuspicionEventActorAttached(const UObject* inWCO, AActor* inAttachTo, AIGS_GameCharacterFramework* inCauser, const FGameplayTagContainer& inOffences, TArray<AIGS_GameCharacterFramework*> inIgnoredBy);
     
-    UFUNCTION(BlueprintCallable)
-    static AIGS_SuspicionEventActor* SpawnSuspicionEventActorAdvanced(const UObject* inWCO, const FTransform& InTransform, AIGS_GameCharacterFramework* inCauser, const FGameplayTagContainer& inOffences, TArray<AIGS_GameCharacterFramework*> inIgnoredBy);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static AIGS_SuspicionEventActor* SpawnSuspicionEventActorAdvanced(const UObject* inWCO, const FTransform& InTransform, AIGS_GameCharacterFramework* inCauser, const FGameplayTagContainer& inOffences, TArray<AIGS_GameCharacterFramework*> inIgnoredBy);
     
-    UFUNCTION(BlueprintCallable)
-    static AIGS_SuspicionEventActor* SpawnSuspicionEventActor(const UObject* inWCO, const FTransform& InTransform, AIGS_GameCharacterFramework* inCauser, const FGameplayTagContainer& inOffences, TArray<AIGS_GameCharacterFramework*> inIgnoredBy);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static AIGS_SuspicionEventActor* SpawnSuspicionEventActor(const UObject* inWCO, const FTransform& InTransform, AIGS_GameCharacterFramework* inCauser, const FGameplayTagContainer& inOffences, TArray<AIGS_GameCharacterFramework*> inIgnoredBy);
     
     UFUNCTION(BlueprintCallable)
     static void SpawnSquadAroundActorWithoutDelegate(AActor* inActor, EIGS_TeamSideEnum inTeamSide, EIGS_UnitSpecialization inUnitSpecialization, int32 inEnemyCount);
@@ -120,65 +120,65 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SpawnSquadAroundActor(AActor* inActor, EIGS_TeamSideEnum inTeamSide, EIGS_UnitSpecialization inUnitSpecialization, int32 inEnemyCount, FIGS_SpawnerEventDelegate inSpawnerDelegate);
     
-    UFUNCTION(BlueprintCallable)
-    static AIGS_LootBagPickup* SpawnLootBagWithData(const UObject* inWCO, TArray<FIGS_LootBagSingleItem> inItems, FTransform InTransform);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static AIGS_LootBagPickup* SpawnLootBagWithData(const UObject* inWCO, TArray<FIGS_LootBagSingleItem> inItems, FTransform InTransform);
     
-    UFUNCTION(BlueprintCallable)
-    static AIGS_LootBagPickup* SpawnLootBag(const UObject* inWCO, TArray<TSubclassOf<UIGS_InventoryObjectFramework>> inItemClasses, FTransform InTransform, bool bRegisterToLootManager);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static AIGS_LootBagPickup* SpawnLootBag(const UObject* inWCO, TArray<TSubclassOf<UIGS_InventoryObjectFramework>> inItemClasses, FTransform InTransform, bool bRegisterToLootManager);
     
-    UFUNCTION(BlueprintCallable)
-    static AIGS_LootBagPickup* SpawnGadgetBag(const UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClas, FTransform InTransform);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static AIGS_LootBagPickup* SpawnGadgetBag(const UObject* inWCO, TSubclassOf<UIGS_InventoryObjectFramework> inItemClas, FTransform InTransform);
     
     UFUNCTION(BlueprintCallable)
     static TArray<FVector> SortLocationsByDistance(TArray<FVector> inLocations, FVector inOriginPoint);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetWaveManagerData(const UObject* inWCO, UIGS_WaveManagerData* inWaveManagerData);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetWaveManagerData(const UObject* inWCO, UIGS_WaveManagerData* inWaveManagerData);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetUseTempWaveManager(const UObject* inWCO, bool InValue);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetUseTempWaveManager(const UObject* inWCO, bool InValue);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetUpWaveManagerWavesDirections(const UObject* inWCO, int32 inWavesDirections);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetUpWaveManagerWavesDirections(const UObject* inWCO, int32 inWavesDirections);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetUpWaveManagerVehicleTargetPoint(const UObject* inWCO, FIGS_InterestPointHolder inInterestPointHolder);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetUpWaveManagerVehicleTargetPoint(const UObject* inWCO, FIGS_InterestPointHolder inInterestPointHolder);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetUpWaveManagerUseVehicles(const UObject* inWCO, bool inUseVehicles);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetUpWaveManagerUseVehicles(const UObject* inWCO, bool inUseVehicles);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetUpWaveManagerSegment(const UObject* inWCO, int32 inStormTypes, const TArray<FGameplayTagContainer>& inPointsGameplayTags, const TMap<EIGS_UnitSpecialization, int32>& inSpecialTypesMaxCount, int32 inMaxEnemyCount, float inStormLength, float inBreakLength);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetUpWaveManagerSegment(const UObject* inWCO, int32 inStormTypes, const TArray<FGameplayTagContainer>& inPointsGameplayTags, const TMap<EIGS_UnitSpecialization, int32>& inSpecialTypesMaxCount, int32 inMaxEnemyCount, float inStormLength, float inBreakLength);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetUpWaveManagerMaxHeliDistance(const UObject* inWCO, float inMaxDistance);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetUpWaveManagerMaxHeliDistance(const UObject* inWCO, float inMaxDistance);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetUpWaveManagerMaxCarInPhaseCount(const UObject* inWCO, int32 inMaxCarCountInPhase);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetUpWaveManagerMaxCarInPhaseCount(const UObject* inWCO, int32 inMaxCarCountInPhase);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetUpWaveManagerMaxCarDistance(const UObject* inWCO, float inMaxDistance);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetUpWaveManagerMaxCarDistance(const UObject* inWCO, float inMaxDistance);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetUpWaveManagerMaxCarCount(const UObject* inWCO, int32 inMaxCarCount);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetUpWaveManagerMaxCarCount(const UObject* inWCO, int32 inMaxCarCount);
     
     UFUNCTION(BlueprintCallable)
     static void SetTortillaBlendEffectValue(AIGS_PlayerCharacter* inPlayer, float InValue);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetTeamSidesVariations(const UObject* inWCO, TMap<EIGS_TeamSideEnum, uint8> inTeamSidesVariations);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetTeamSidesVariations(const UObject* inWCO, TMap<EIGS_TeamSideEnum, uint8> inTeamSidesVariations);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetSpawnGroupsActive(const UObject* inWCO, bool Inactive, const TArray<FGameplayTagContainer>& inPointsGameplayTags);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetSpawnGroupsActive(const UObject* inWCO, bool Inactive, const TArray<FGameplayTagContainer>& inPointsGameplayTags);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetShowPlayerOutline(const UObject* inWCO, bool inShowPlayerOutline);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetShowPlayerOutline(const UObject* inWCO, bool inShowPlayerOutline);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetMissionRequiredBagsInWeight(UObject* inWCO, int32 inRequiredWeight);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetMissionRequiredBagsInWeight(UObject* inWCO, int32 inRequiredWeight);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetMissionLootValues(UObject* inWCO, int32 inObjectiveValue, int32 inTotalMissionValue);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetMissionLootValues(UObject* inWCO, int32 inObjectiveValue, int32 inTotalMissionValue);
     
     UFUNCTION(BlueprintCallable)
     static void SetLowHealthEffectThreshold(AIGS_PlayerCharacter* inPlayer, float inLowHealthEffectThreshold);
@@ -189,8 +189,8 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SetDamageLimiterTypeEnabled(AIGS_PlayerCharacter* inPlayer, EIGS_DamageLimiterType inType, bool inEnabled);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetAITeamTier(const UObject* inWCO, const EIGS_TeamSideEnum inTeamSide, const EIGS_AITiers inTier);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetAITeamTier(const UObject* inWCO, const EIGS_TeamSideEnum inTeamSide, const EIGS_AITiers inTier);
     
     UFUNCTION(BlueprintCallable)
     static void RequestStopSession();
@@ -201,14 +201,14 @@ public:
     UFUNCTION(BlueprintCallable)
     static void RequestPlaySession(bool bNewWindow);
     
-    UFUNCTION(BlueprintCallable)
-    static void RemoveTerritoryRestrictionTag(const UObject* inWCO, const FName& inTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void RemoveTerritoryRestrictionTag(const UObject* inWCO, const FName& inTag);
     
-    UFUNCTION(BlueprintCallable)
-    static int32 PlayerOffencesToIndex(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static int32 PlayerOffencesToIndex(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
     
-    UFUNCTION(BlueprintCallable)
-    static void OverrideSpecialTierRatio(const UObject* inWCO, const float inNewRatio, const EIGS_TeamSideEnum inTeamSide);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void OverrideSpecialTierRatio(const UObject* inWCO, const float inNewRatio, const EIGS_TeamSideEnum inTeamSide);
     
     UFUNCTION(BlueprintCallable)
     static bool MatchesTagDepth(FGameplayTag inTagLeft, FGameplayTag inTagRight, int32 InDepth);
@@ -216,53 +216,53 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsTearingDown(const UObject* inCaller);
     
-    UFUNCTION(BlueprintCallable)
-    static bool IsLastStrike(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool IsLastStrike(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static bool IsInLimbo(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool IsInLimbo(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static bool IsEveryCharacterOfTeamsideDeadOrDown(UObject* inWCO, EIGS_TeamSideEnum inTeamSide);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool IsEveryCharacterOfTeamsideDeadOrDown(UObject* inWCO, EIGS_TeamSideEnum inTeamSide);
     
-    UFUNCTION(BlueprintCallable)
-    static bool IsEveryCharacterOfTeamsideDead(UObject* inWCO, EIGS_TeamSideEnum inTeamSide);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool IsEveryCharacterOfTeamsideDead(UObject* inWCO, EIGS_TeamSideEnum inTeamSide);
     
     UFUNCTION(BlueprintCallable)
     static bool IsDamageLimiterTypeEnabled(AIGS_PlayerCharacter* inPlayer, EIGS_DamageLimiterType inType);
     
-    UFUNCTION(BlueprintCallable)
-    static bool IsAlarmed(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool IsAlarmed(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static float GetTotalWeightSpawned(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static float GetTotalWeightSpawned(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static float GetSuspicionAmountForOffence(const UObject* inWCO, AIGS_PlayerCharacter* inPlayer, FGameplayTagContainer inOffences);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static float GetSuspicionAmountForOffence(const UObject* inWCO, AIGS_PlayerCharacter* inPlayer, FGameplayTagContainer inOffences);
     
     UFUNCTION(BlueprintCallable)
     static void GetSubTagOnDepth(FGameplayTag inTag, int32 InDepth, FGameplayTag& outTag);
     
-    UFUNCTION(BlueprintCallable)
-    static int32 GetStrikeCountForOffender(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static int32 GetStrikeCountForOffender(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static EIGS_StorePlatform GetStorePlatformType(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static EIGS_StorePlatform GetStorePlatformType(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static AIGS_ScriptManagerBase* GetScriptManager(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static AIGS_ScriptManagerBase* GetScriptManager(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetPingForLocalPlayer(APlayerState* inPlayerState);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static FString GetPersistentLevelName(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static FString GetPersistentLevelName(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static AIGS_ObjectiveScenarioBase* GetObjectiveScenario(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static AIGS_ObjectiveScenarioBase* GetObjectiveScenario(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static UTexture2D* GetMetaCharacterPicture(UObject* inWCO, UMETA_Character* inCharacter);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UTexture2D* GetMetaCharacterPicture(UObject* inWCO, UMETA_Character* inCharacter);
     
     UFUNCTION(BlueprintCallable)
     static int32 GetMaximumStrikes();
@@ -273,8 +273,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetLatencyForPlayerState(APlayerState* inPlayerState);
     
-    UFUNCTION(BlueprintCallable)
-    static EIGS_ItemType GetItemType(UObject* inWCO, FIGS_LootBagInfo inBagInfo);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static EIGS_ItemType GetItemType(UObject* inWCO, FIGS_LootBagInfo inBagInfo);
     
     UFUNCTION(BlueprintCallable)
     static bool GetIsPS5();
@@ -288,14 +288,14 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetCurrentTextPlatformName();
     
-    UFUNCTION(BlueprintCallable)
-    static int32 GetCurrentStrikes(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static int32 GetCurrentStrikes(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     static EIGS_PlatformName GetCurrentPlatform();
     
-    UFUNCTION(BlueprintCallable)
-    static UTexture2D* GetCharacterPicture(UObject* inWCO, EIGS_CharacterID inCharacterID, bool bIsMaxLeveled, int32 inGenericID, FGameplayTag inCharacterSkinID);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UTexture2D* GetCharacterPicture(UObject* inWCO, EIGS_CharacterID inCharacterID, bool bIsMaxLeveled, int32 inGenericID, FGameplayTag inCharacterSkinID);
     
     UFUNCTION(BlueprintCallable)
     static FText GetCharacterNameFromPlayerState(AIGS_PlayerStateGame* inPS);
@@ -303,20 +303,20 @@ public:
     UFUNCTION(BlueprintCallable)
     static FText GetCharacterNameFromPawn(AIGS_GameCharacterFramework* inCharacter);
     
-    UFUNCTION(BlueprintCallable)
-    static FText GetCharacterName(UObject* inWCO, EIGS_CharacterID inCharacterID);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FText GetCharacterName(UObject* inWCO, EIGS_CharacterID inCharacterID);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static EIGS_BasePlatform GetBasePlatformType();
     
-    UFUNCTION(BlueprintCallable)
-    static float GetBagValue(UObject* inWCO, FIGS_LootBagInfo inBagInfo);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static float GetBagValue(UObject* inWCO, FIGS_LootBagInfo inBagInfo);
     
-    UFUNCTION(BlueprintCallable)
-    static EIGS_BagType GetBagTypeForInfo(UObject* inWCO, FIGS_LootBagInfo inBagInfo);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static EIGS_BagType GetBagTypeForInfo(UObject* inWCO, FIGS_LootBagInfo inBagInfo);
     
-    UFUNCTION(BlueprintCallable)
-    static EIGS_BagType GetBagType(UObject* inWCO, EIGS_ItemType inBagType, float inBagValue);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static EIGS_BagType GetBagType(UObject* inWCO, EIGS_ItemType inBagType, float inBagValue);
     
     UFUNCTION(BlueprintCallable)
     static UIGS_OutlineComponent* GetActorOutlineComponent(const AActor* inActor, const bool inWarnFindComponentByClass);
@@ -324,38 +324,38 @@ public:
     UFUNCTION(BlueprintCallable)
     static UIGS_ObjectStatus* GetActorObjectStatus(const AActor* inActor);
     
-    UFUNCTION(BlueprintCallable)
-    static void ForceSWATSpawn(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ForceSWATSpawn(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void ForceSpawnWaveWithTags(const UObject* inWCO, EIGS_TeamSideEnum inTeamSide, int32 inEnemyCount, const TArray<FGameplayTagContainer>& inPointsGameplayTags);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ForceSpawnWaveWithTags(const UObject* inWCO, EIGS_TeamSideEnum inTeamSide, int32 inEnemyCount, const TArray<FGameplayTagContainer>& inPointsGameplayTags);
     
-    UFUNCTION(BlueprintCallable)
-    static void ForceSpawnWave(const UObject* inWCO, int32 inEnemyCount);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ForceSpawnWave(const UObject* inWCO, int32 inEnemyCount);
     
-    UFUNCTION(BlueprintCallable)
-    static void ForceSpawnSquadOnSpawnPoints(const UObject* inWCO, EIGS_TeamSideEnum inTeamSide, uint8 inUnitVariation, const TArray<EIGS_UnitSpecialization>& inUnitSpecializations, const TArray<AIGS_AISpawnPoint*>& inSpawnPoints, EIGS_SpawnAnimType inSpawnAnim);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ForceSpawnSquadOnSpawnPoints(const UObject* inWCO, EIGS_TeamSideEnum inTeamSide, uint8 inUnitVariation, const TArray<EIGS_UnitSpecialization>& inUnitSpecializations, const TArray<AIGS_AISpawnPoint*>& inSpawnPoints, EIGS_SpawnAnimType inSpawnAnim);
     
-    UFUNCTION(BlueprintCallable)
-    static void ForceSetMissionWeights(UObject* inWCO, const int32 inTotalWeight);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ForceSetMissionWeights(UObject* inWCO, const int32 inTotalWeight);
     
-    UFUNCTION(BlueprintCallable)
-    static void ForceSetMissionRequiredBagsInWeight(UObject* inWCO, int32 inRequiredWeight);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ForceSetMissionRequiredBagsInWeight(UObject* inWCO, int32 inRequiredWeight);
     
-    UFUNCTION(BlueprintCallable)
-    static void ForceHideEscapeWarning(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ForceHideEscapeWarning(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     static void DebugTestRequestAnimation(AIGS_GameCharacterFramework* inCharacter, EIGS_AIMontageType inMontageType, uint8 inMontageVariation);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateExplosiontWithFalloff(UObject* inWCO, float inBaseDamage, float inMinDamage, FVector inOrigin, float inDamageInnerRadius, float inDamageOuterRadius, float inDamageFalloff, float inEffectRadius, TSubclassOf<UDamageType> inDamageTypeClass, const TArray<AActor*>& IgnoreActors, UPARAM(Ref) AActor*& DamageCauser, UPARAM(Ref) AController*& InstigatedByController, TEnumAsByte<ECollisionChannel> DamagePreventionChannel);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateExplosiontWithFalloff(UObject* inWCO, float inBaseDamage, float inMinDamage, FVector inOrigin, float inDamageInnerRadius, float inDamageOuterRadius, float inDamageFalloff, float inEffectRadius, TSubclassOf<UDamageType> inDamageTypeClass, const TArray<AActor*>& IgnoreActors, UPARAM(Ref) AActor*& DamageCauser, UPARAM(Ref) AController*& InstigatedByController, TEnumAsByte<ECollisionChannel> DamagePreventionChannel);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateExplosionEffectOnly(UObject* inWCO, FVector inOrigin, float inEffectRadius, AActor* inCausingActor);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateExplosionEffectOnly(UObject* inWCO, FVector inOrigin, float inEffectRadius, AActor* inCausingActor);
     
-    UFUNCTION(BlueprintCallable)
-    static void CreateExplosion(UObject* inWCO, float inBaseDamage, FVector inOrigin, float inDamageRadius, float inEffectRadius, TSubclassOf<UDamageType> inDamageTypeClass, const TArray<AActor*>& IgnoreActors, UPARAM(Ref) AActor*& DamageCauser, UPARAM(Ref) AController*& InstigatedByController, bool bDoFullDamage, TEnumAsByte<ECollisionChannel> DamagePreventionChannel);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateExplosion(UObject* inWCO, float inBaseDamage, FVector inOrigin, float inDamageRadius, float inEffectRadius, TSubclassOf<UDamageType> inDamageTypeClass, const TArray<AActor*>& IgnoreActors, UPARAM(Ref) AActor*& DamageCauser, UPARAM(Ref) AController*& InstigatedByController, bool bDoFullDamage, TEnumAsByte<ECollisionChannel> DamagePreventionChannel);
     
     UFUNCTION(BlueprintCallable)
     static void CreateDestroyEffect(UPrimitiveComponent* inSourceComponent, TSubclassOf<UIGS_DamageTypeBase> inDamageType, TSubclassOf<UIGS_ImpactTypeObject> inImpactType, const FHitResult& inHitResult, const AIGS_GameCharacterFramework* inOwnerCharacter);
@@ -369,47 +369,47 @@ public:
     UFUNCTION(BlueprintCallable)
     static float ApplyDamage(const FHitResult& inHitResult, AIGS_GameCharacterFramework* inOwner, float inDamage, const TSubclassOf<UDamageType> inDamageType);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddWaveManagerWavesRandomDirection(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddWaveManagerWavesRandomDirection(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddTerritoryRestrictionTag(const UObject* inWCO, const FName& inTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddTerritoryRestrictionTag(const UObject* inWCO, const FName& inTag);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddSuspicionOverrideAmount(const UObject* inWCO, FGameplayTagContainer inOffences, float inAmount, AActor* inDetector, AActor* inOffender);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddSuspicionOverrideAmount(const UObject* inWCO, FGameplayTagContainer inOffences, float inAmount, AActor* inDetector, AActor* inOffender);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddSuspicionGeneral(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddSuspicionGeneral(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddSuspicionForPlayer(const UObject* inWCO, AIGS_PlayerCharacter* inPlayer, FGameplayTagContainer inOffences, AActor* inDetector);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddSuspicionForPlayer(const UObject* inWCO, AIGS_PlayerCharacter* inPlayer, FGameplayTagContainer inOffences, AActor* inDetector);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddSuspicion(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddSuspicion(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddStrikesForSuspActors(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddStrikesForSuspActors(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddStrikesForSpecialOffence(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddStrikesForSpecialOffence(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddStrikesForPlayer(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddStrikesForPlayer(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddStrikesForOffender(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddStrikesForOffender(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddStrikesForNoise(const UObject* inWCO, FName inNoiseTag, AActor* inDetector, AActor* inOffender);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddStrikesForNoise(const UObject* inWCO, FName inNoiseTag, AActor* inDetector, AActor* inOffender);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddStrikesCustom(const UObject* inWCO, int32 inCount, const FGameplayTag inBlameTag, AActor* inDetector, AActor* inOffender);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddStrikesCustom(const UObject* inWCO, int32 inCount, const FGameplayTag inBlameTag, AActor* inDetector, AActor* inOffender);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddInfoMessageClientOnly(const UObject* inWCO, FText inInfoText);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddInfoMessageClientOnly(const UObject* inWCO, FText inInfoText);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddErrorMessage(const UObject* inWCO, FText inErrorText);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddErrorMessage(const UObject* inWCO, FText inErrorText);
     
 };
 

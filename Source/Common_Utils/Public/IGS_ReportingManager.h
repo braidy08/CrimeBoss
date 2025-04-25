@@ -13,8 +13,8 @@ class COMMON_UTILS_API UIGS_ReportingManager : public UBlueprintFunctionLibrary 
 public:
     UIGS_ReportingManager();
 
-    UFUNCTION(BlueprintCallable)
-    static void ReportPlayer(const UObject* inWCO, const APlayerState* inLocalPlayerState, const APlayerState* inReportedPlayerState, EIGS_PlayerReportsCategory inReason, const FString& inMessage);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ReportPlayer(const UObject* inWCO, const APlayerState* inLocalPlayerState, const APlayerState* inReportedPlayerState, EIGS_PlayerReportsCategory inReason, const FString& inMessage);
     
 };
 

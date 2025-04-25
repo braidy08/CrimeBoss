@@ -20,8 +20,8 @@ public:
     
     UIGS_PreloadMetaLevelDialogue();
 
-    UFUNCTION(BlueprintCallable)
-    static UIGS_PreloadMetaLevelDialogue* PreloadMetaLevelDialogues(UObject* inWCO, FText DialogueID, UPARAM(Ref) TArray<EIGS_MetaDialogueCharacter>& inCharacters);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_PreloadMetaLevelDialogue* PreloadMetaLevelDialogues(UObject* inWCO, FText DialogueID, UPARAM(Ref) TArray<EIGS_MetaDialogueCharacter>& inCharacters);
     
     UFUNCTION(BlueprintCallable)
     void FinishPreload();

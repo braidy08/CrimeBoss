@@ -13,8 +13,8 @@ class BF_AUDIO_API UMETA_MusicScenarioPacksDatabase : public UGameInstanceSubsys
 public:
     UMETA_MusicScenarioPacksDatabase();
 
-    UFUNCTION(BlueprintCallable)
-    static FMETA_MusicScenarioPacksTableRow GetMusicData(UObject* inWCO, const FGameplayTag inMusicID, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FMETA_MusicScenarioPacksTableRow GetMusicData(UObject* inWCO, const FGameplayTag inMusicID, bool& outSucceeded);
     
 };
 

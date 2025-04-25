@@ -28,11 +28,11 @@ public:
     UFUNCTION(BlueprintCallable)
     FMETA_FPSMissionInfo GetFPSMissionInfoBP(TSubclassOf<UMETA_MissionID> inMissionID, bool& outSucceeded);
     
-    UFUNCTION(BlueprintCallable)
-    static UMETA_BaseMission* GetChainMissionObject(const UObject* inWCO, TSubclassOf<UMETA_MissionID> inMissionID);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UMETA_BaseMission* GetChainMissionObject(const UObject* inWCO, TSubclassOf<UMETA_MissionID> inMissionID);
     
-    UFUNCTION(BlueprintCallable)
-    static FMETA_MissionDatabase GetChainMissionDataBP(const UObject* inWCO, TSubclassOf<UMETA_MissionID> inClass, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FMETA_MissionDatabase GetChainMissionDataBP(const UObject* inWCO, TSubclassOf<UMETA_MissionID> inClass, bool& outSucceeded);
     
 };
 

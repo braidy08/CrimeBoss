@@ -12,8 +12,8 @@ class CRIMEBOSSMETA_API UIGS_ChallengesUtilities : public UBlueprintFunctionLibr
 public:
     UIGS_ChallengesUtilities();
 
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static int32 GetCompletedCampaignCount(UObject* inWCO, EIGS_UserDifficulty inDifficulty);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static int32 GetCompletedCampaignCount(UObject* inWCO, EIGS_UserDifficulty inDifficulty);
     
 };
 

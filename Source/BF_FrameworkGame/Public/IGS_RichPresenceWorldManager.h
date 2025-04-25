@@ -13,8 +13,8 @@ class BF_FRAMEWORKGAME_API UIGS_RichPresenceWorldManager : public UWorldSubsyste
 public:
     UIGS_RichPresenceWorldManager();
 
-    UFUNCTION(BlueprintCallable)
-    static void SetRichPresence(const UObject* WCO, FGameplayTag MessageID, const TArray<FIGS_RichPresenceParam>& MessageParams);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=WCO))
+static void SetRichPresence(const UObject* WCO, FGameplayTag MessageID, const TArray<FIGS_RichPresenceParam>& MessageParams);
     
 };
 

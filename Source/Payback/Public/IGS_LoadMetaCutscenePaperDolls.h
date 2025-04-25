@@ -16,8 +16,8 @@ public:
     
     UIGS_LoadMetaCutscenePaperDolls();
 
-    UFUNCTION(BlueprintCallable)
-    static UIGS_LoadMetaCutscenePaperDolls* LoadMetaCutscenePaperDolls(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_LoadMetaCutscenePaperDolls* LoadMetaCutscenePaperDolls(UObject* inWCO);
     
 };
 

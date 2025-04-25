@@ -56,20 +56,20 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetSupportedInputCategories(TArray<EIGS_InputCategory> inCategories);
     
-    UFUNCTION(BlueprintCallable)
-    static void RequestSwitchToScreen(UObject* inWCO, FGameplayTag inTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void RequestSwitchToScreen(UObject* inWCO, FGameplayTag inTag);
     
-    UFUNCTION(BlueprintCallable)
-    static void RequestOpenScreenByTag(UObject* inWCO, FGameplayTag inTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void RequestOpenScreenByTag(UObject* inWCO, FGameplayTag inTag);
     
-    UFUNCTION(BlueprintCallable)
-    static void RequestOpenScreen(UObject* inWCO, UIGS_Screen* inScreen, bool AddToViewport);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void RequestOpenScreen(UObject* inWCO, UIGS_Screen* inScreen, bool AddToViewport);
     
-    UFUNCTION(BlueprintCallable)
-    static void RequestCloseScreenByTag(UObject* inWCO, FGameplayTag inTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void RequestCloseScreenByTag(UObject* inWCO, FGameplayTag inTag);
     
-    UFUNCTION(BlueprintCallable)
-    static void RequestCloseScreen(UObject* inWCO, UIGS_Screen* inScreen, bool destroyAfterClose, bool refreshFocusAfterClose, bool openPreviousScreen);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void RequestCloseScreen(UObject* inWCO, UIGS_Screen* inScreen, bool destroyAfterClose, bool refreshFocusAfterClose, bool openPreviousScreen);
     
     UFUNCTION(BlueprintCallable)
     void RefreshFocus();

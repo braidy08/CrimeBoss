@@ -35,8 +35,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsActive() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static AIGS_GeneralListener* GetGeneralListener(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static AIGS_GeneralListener* GetGeneralListener(const UObject* inWCO);
     
 
     // Fix for true pure virtual functions not being implemented

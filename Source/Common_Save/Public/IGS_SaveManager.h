@@ -59,20 +59,20 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldUnlockVeteranRewards() const;
     
-    UFUNCTION(BlueprintCallable)
-    static void SetPlotlinesDisableDebugData(const UObject* inWCO, bool bDisable);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetPlotlinesDisableDebugData(const UObject* inWCO, bool bDisable);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetDebugMode(const UObject* inWCO, bool inDebugState);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetDebugMode(const UObject* inWCO, bool inDebugState);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetCareerDebugData(const UObject* inWCO, FMETA_SaveData_DebugCareer inData);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetCareerDebugData(const UObject* inWCO, FMETA_SaveData_DebugCareer inData);
     
-    UFUNCTION(BlueprintCallable)
-    static void SaveWeaponCheatSelection(const UObject* inWCO, const FIGS_WeaponCheatSelection_DebugData& inWeaponSelection);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SaveWeaponCheatSelection(const UObject* inWCO, const FIGS_WeaponCheatSelection_DebugData& inWeaponSelection);
     
-    UFUNCTION(BlueprintCallable)
-    static void SaveQuickplay(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SaveQuickplay(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     void SavePlayerWantedProgressionResetCompensation();
@@ -89,29 +89,29 @@ public:
     UFUNCTION(BlueprintCallable)
     void SavePlayerReadEULA();
     
-    UFUNCTION(BlueprintCallable)
-    static void SaveCareer(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SaveCareer(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void SaveAll(const UObject* inWCO, const FString& inCareerSlotName, bool inIsDebugSaveFile);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SaveAll(const UObject* inWCO, const FString& inCareerSlotName, bool inIsDebugSaveFile);
     
-    UFUNCTION(BlueprintCallable)
-    static void SaveAccount(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SaveAccount(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static UIGS_DebugWeaponCheatSelection* LoadWeaponCheatSelection(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_DebugWeaponCheatSelection* LoadWeaponCheatSelection(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static UIGS_PaybackSaveGameQuickplay* LoadQuickplay(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_PaybackSaveGameQuickplay* LoadQuickplay(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static UIGS_PaybackSaveGameCareer* LoadCareer(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_PaybackSaveGameCareer* LoadCareer(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static UIGS_PaybackSaveGameAccount* LoadAccount(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_PaybackSaveGameAccount* LoadAccount(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static bool IsCareerDebugDataFilled(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static bool IsCareerDebugDataFilled(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasQuickplaySaveValidData();
@@ -125,14 +125,14 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasCareerSaveValidData();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static bool GetDebugMode(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static bool GetDebugMode(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static FString GetCareerSlotName(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static FString GetCareerSlotName(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static FMETA_SaveData_DebugCareer GetCareerDebugData(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FMETA_SaveData_DebugCareer GetCareerDebugData(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FIGS_CareerSlotInfo> GetAllCareerSaveFiles() const;
@@ -143,8 +143,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool DoesNormalCareerSaveExist();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static bool DoesDebugWeaponCheatSelectionSaveExist(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static bool DoesDebugWeaponCheatSelectionSaveExist(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool DoesDebugCareerSaveExist();
@@ -167,17 +167,17 @@ public:
     UFUNCTION(BlueprintCallable)
     bool DidPlayerReadEULA();
     
-    UFUNCTION(BlueprintCallable)
-    static void DeleteCareer(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void DeleteCareer(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static UIGS_PaybackSaveGameCareer* CreateCareer(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_PaybackSaveGameCareer* CreateCareer(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static bool CheckPlayerWasPlayingGame(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool CheckPlayerWasPlayingGame(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void AddPlotlineTagToDebugData(const UObject* inWCO, FGameplayTag inPlotlineTag, bool& bSuccess);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void AddPlotlineTagToDebugData(const UObject* inWCO, FGameplayTag inPlotlineTag, bool& bSuccess);
     
 };
 

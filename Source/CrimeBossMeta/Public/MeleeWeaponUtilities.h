@@ -13,11 +13,11 @@ class CRIMEBOSSMETA_API UMeleeWeaponUtilities : public UBlueprintFunctionLibrary
 public:
     UMeleeWeaponUtilities();
 
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static TArray<FIGS_UnlockItemInfo> GetMeleeWeaponsByCategory(UObject* inWCO, const FGameplayTag inPreviewWeaponID, const TArray<FIGS_UnlockItemInfo>& inUnlockItems);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static TArray<FIGS_UnlockItemInfo> GetMeleeWeaponsByCategory(UObject* inWCO, const FGameplayTag inPreviewWeaponID, const TArray<FIGS_UnlockItemInfo>& inUnlockItems);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static TArray<FIGS_UnlockItemInfo> GetAllMelleWeaponFamiliesByCategories(UObject* inWCO, const TArray<FIGS_UnlockItemInfo>& inAllMeleeWeapons, bool inIncludeWithoutCategory);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static TArray<FIGS_UnlockItemInfo> GetAllMelleWeaponFamiliesByCategories(UObject* inWCO, const TArray<FIGS_UnlockItemInfo>& inAllMeleeWeapons, bool inIncludeWithoutCategory);
     
 };
 

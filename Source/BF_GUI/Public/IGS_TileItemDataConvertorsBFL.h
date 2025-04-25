@@ -23,8 +23,8 @@ class BF_GUI_API UIGS_TileItemDataConvertorsBFL : public UBlueprintFunctionLibra
 public:
     UIGS_TileItemDataConvertorsBFL();
 
-    UFUNCTION(BlueprintCallable)
-    static UIGS_TileItemData* UnlockItemToTileItemData(FIGS_UnlockItemInfo inUnlockItemInfo, EIGS_TileItemState inState, UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_TileItemData* UnlockItemToTileItemData(FIGS_UnlockItemInfo inUnlockItemInfo, EIGS_TileItemState inState, UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     static TArray<UIGS_TileItemWeaponFamilyData*> SortWeaponFamilyData(TArray<UIGS_TileItemWeaponFamilyData*> inArray);
@@ -32,23 +32,23 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<UIGS_TileItemData*> SortTileItemData(TArray<UIGS_TileItemData*> inArray);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UIGS_TileItemData*> SortedUnlockItemsToTileItemData(TArray<FIGS_UnlockItemInfo> inUnlockItemsInfo, EIGS_TileItemState inState, UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UIGS_TileItemData*> SortedUnlockItemsToTileItemData(TArray<FIGS_UnlockItemInfo> inUnlockItemsInfo, EIGS_TileItemState inState, UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UIGS_TileItemData*> SortedBaseObjectsToTileItemData(const UIGS_UnlockManager* inUnlockManager, TArray<UMETA_BaseObject*> inObjects, EIGS_TileItemState inState, UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UIGS_TileItemData*> SortedBaseObjectsToTileItemData(const UIGS_UnlockManager* inUnlockManager, TArray<UMETA_BaseObject*> inObjects, EIGS_TileItemState inState, UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static UIGS_TileItemData* MetaBaseObjectToTileItemData(const UIGS_UnlockManager* inUnlockManager, const UMETA_BaseObject* inBaseObject, EIGS_TileItemState inState, UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_TileItemData* MetaBaseObjectToTileItemData(const UIGS_UnlockManager* inUnlockManager, const UMETA_BaseObject* inBaseObject, EIGS_TileItemState inState, UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static FIGS_CharacterPanelDataStruct HeisterDataToCharacterPanelData(UPARAM(Ref) FCommonHeisterData& inHeisterData, UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static FIGS_CharacterPanelDataStruct HeisterDataToCharacterPanelData(UPARAM(Ref) FCommonHeisterData& inHeisterData, UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     static FIGS_UITileQualityColors GetColorSetForQuality(EMETA_ItemQuality inQuality);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_CharacterPanelDataStruct CharacterToCharacterPanelData(UObject* inWCO, UMETA_Character* inCharacter);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_CharacterPanelDataStruct CharacterToCharacterPanelData(UObject* inWCO, UMETA_Character* inCharacter);
     
     UFUNCTION(BlueprintCallable)
     static UIGS_TileItemData* BossCharacterToTileItemData(const UIGS_UnlockManager* inUnlockManager, const UMETA_BossCharacter* inBossCharacter);

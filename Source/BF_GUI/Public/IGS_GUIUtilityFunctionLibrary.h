@@ -31,17 +31,17 @@ public:
     UFUNCTION(BlueprintCallable)
     static FString PasteTextFromClipboard();
     
-    UFUNCTION(BlueprintCallable)
-    static TSubclassOf<UUserWidget> GetWidgetForWorldWidgetType(UObject* inWCO, EIGS_WorldWidgetType inType);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TSubclassOf<UUserWidget> GetWidgetForWorldWidgetType(UObject* inWCO, EIGS_WorldWidgetType inType);
     
     UFUNCTION(BlueprintCallable)
     static FIGS_PrestigeLevelUIData GetPrestigeLevelUIDataForLevel(int32 inLevel);
     
-    UFUNCTION(BlueprintCallable)
-    static bool GetInputActionKeySymbolForCurrentInputDevice(UObject* inWCO, EIGS_InputAction InAction, FName& OutText);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool GetInputActionKeySymbolForCurrentInputDevice(UObject* inWCO, EIGS_InputAction InAction, FName& OutText);
     
-    UFUNCTION(BlueprintCallable)
-    static bool GetInputActionKeySymbol(UObject* inWCO, EIGS_InputAction InAction, FName& OutText, EIGS_InputDevice inInputDevice);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool GetInputActionKeySymbol(UObject* inWCO, EIGS_InputAction InAction, FName& OutText, EIGS_InputDevice inInputDevice);
     
     UFUNCTION(BlueprintCallable)
     static FIGS_HordeMode_PerkRow GetHordeModeUpgradeRowByEffect(TSubclassOf<UGameplayEffect> inEffectClass, const UDataTable* perks_table);
@@ -55,8 +55,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetFirstPrestigeLevelTreshold();
     
-    UFUNCTION(BlueprintCallable)
-    static bool GetAlternativeInputActionKeySymbol(UObject* inWCO, EIGS_InputAction InAction, FName& OutText, EIGS_InputDevice inInputDevice);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool GetAlternativeInputActionKeySymbol(UObject* inWCO, EIGS_InputAction InAction, FName& OutText, EIGS_InputDevice inInputDevice);
     
     UFUNCTION(BlueprintCallable)
     static void CopyTextToClipboard(const FString& InText);

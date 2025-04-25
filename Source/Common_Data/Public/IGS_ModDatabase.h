@@ -19,11 +19,11 @@ public:
     UFUNCTION(BlueprintCallable)
     void ModAppendDataTable(UDataTable* inNewTable);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static UIGS_ModDatabase* GetModDatabaseInstance(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static UIGS_ModDatabase* GetModDatabaseInstance(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_ModTableRow GetModData(UObject* inWCO, const TSubclassOf<UIGS_ModInventoryObject>& inClass, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_ModTableRow GetModData(UObject* inWCO, const TSubclassOf<UIGS_ModInventoryObject>& inClass, bool& outSucceeded);
     
 };
 

@@ -18,20 +18,20 @@ public:
     UFUNCTION(BlueprintCallable)
     static FMETA_MissionsSave ConvertQuickplayMissionsToSave(TArray<UMETA_BaseMission*> inMissions);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_BaseMission*> ConvertQuickplayMissionsFromSave(const UObject* inWCO, UPARAM(Ref) FMETA_MissionsSave& inMissions);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_BaseMission*> ConvertQuickplayMissionsFromSave(const UObject* inWCO, UPARAM(Ref) FMETA_MissionsSave& inMissions);
     
     UFUNCTION(BlueprintCallable)
     static TArray<FMETA_HordeModeMissionSave> ConvertHordeModeMissionsToSave(TArray<UMETA_HordeModeMission*> inMissions);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_HordeModeMission*> ConvertHordeModeMissionsFromSave(const UObject* inWCO, UPARAM(Ref) TArray<FMETA_HordeModeMissionSave>& inMissions);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_HordeModeMission*> ConvertHordeModeMissionsFromSave(const UObject* inWCO, UPARAM(Ref) TArray<FMETA_HordeModeMissionSave>& inMissions);
     
     UFUNCTION(BlueprintCallable)
     static FMETA_MissionsSave ConvertChainMissionsToSave(TArray<UMETA_BaseMission*> inMissions);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<UMETA_BaseMission*> ConvertChainMissionsFromSave(const UObject* inWCO, UPARAM(Ref) FMETA_MissionsSave& inMissions);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<UMETA_BaseMission*> ConvertChainMissionsFromSave(const UObject* inWCO, UPARAM(Ref) FMETA_MissionsSave& inMissions);
     
 };
 

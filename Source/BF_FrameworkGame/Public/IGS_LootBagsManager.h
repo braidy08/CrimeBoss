@@ -21,8 +21,8 @@ protected:
 public:
     UIGS_LootBagsManager(const FObjectInitializer& ObjectInitializer);
 
-    UFUNCTION(BlueprintCallable)
-    static UIGS_LootBagsManager* GetLootBagsManager(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_LootBagsManager* GetLootBagsManager(UObject* inWCO);
     
 };
 

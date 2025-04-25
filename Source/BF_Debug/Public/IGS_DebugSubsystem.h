@@ -730,8 +730,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsToggledOn_AIBarksDebug() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static UIGS_DebugSubsystem* Instance(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static UIGS_DebugSubsystem* Instance(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetPacketLoss() const;

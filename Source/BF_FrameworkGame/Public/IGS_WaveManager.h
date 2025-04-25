@@ -138,11 +138,11 @@ public:
     void SetUpWaveManagerSegment(int32 inStormTypes, int32 inMaxEnemyCount, float inStormLength, float inBreakLength, const TArray<FGameplayTagContainer>& inPointsGameplayTags, const TMap<EIGS_UnitSpecialization, int32>& inSpecialTypesMaxCount);
     
 protected:
-    UFUNCTION(BlueprintCallable)
-    static void SetStormIntensity(const UObject* inWCO, int32 inIntensity);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetStormIntensity(const UObject* inWCO, int32 inIntensity);
     
-    UFUNCTION(BlueprintCallable)
-    static void SetIsGangsterOnly(const UObject* inWCO, bool inIsGangsterOnly);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SetIsGangsterOnly(const UObject* inWCO, bool inIsGangsterOnly);
     
     UFUNCTION(BlueprintCallable)
     void OnRep_StormIntensity() const;

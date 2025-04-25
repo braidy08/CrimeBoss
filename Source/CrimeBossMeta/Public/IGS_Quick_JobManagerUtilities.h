@@ -13,20 +13,20 @@ class CRIMEBOSSMETA_API UIGS_Quick_JobManagerUtilities : public UBlueprintFuncti
 public:
     UIGS_Quick_JobManagerUtilities();
 
-    UFUNCTION(BlueprintCallable)
-    static void SavePendingNewChanges(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void SavePendingNewChanges(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void RemoveJobCategoryFromPendingNew(const UObject* inWCO, const FGameplayTag inJobCategoryTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void RemoveJobCategoryFromPendingNew(const UObject* inWCO, const FGameplayTag inJobCategoryTag);
     
-    UFUNCTION(BlueprintCallable)
-    static bool IsJobCategoryPendingNew(const UObject* inWCO, const FGameplayTag inJobCategoryTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool IsJobCategoryPendingNew(const UObject* inWCO, const FGameplayTag inJobCategoryTag);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_Quick_JobManagerSaveData InitializeJobCategoriesStatistics(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_Quick_JobManagerSaveData InitializeJobCategoriesStatistics(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static float GetServerWorldTimeWithRTT(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static float GetServerWorldTimeWithRTT(const UObject* inWCO);
     
 };
 

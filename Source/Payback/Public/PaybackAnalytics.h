@@ -12,14 +12,14 @@ class PAYBACK_API UPaybackAnalytics : public UGameInstanceSubsystem {
 public:
     UPaybackAnalytics();
 
-    UFUNCTION(BlueprintCallable)
-    static void ReportMissionFinishedToAnalytics(UObject* inWCO, ECommonMissionResult Result);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void ReportMissionFinishedToAnalytics(UObject* inWCO, ECommonMissionResult Result);
     
-    UFUNCTION(BlueprintCallable)
-    static void LobbyStarted(UObject* inWCO, const FString& lobbySource);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void LobbyStarted(UObject* inWCO, const FString& lobbySource);
     
-    UFUNCTION(BlueprintCallable)
-    static void LobbyFinished(UObject* inWCO, const FString& resultText);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void LobbyFinished(UObject* inWCO, const FString& resultText);
     
 };
 

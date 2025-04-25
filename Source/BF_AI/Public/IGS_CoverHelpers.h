@@ -13,8 +13,8 @@ class BF_AI_API UIGS_CoverHelpers : public UBlueprintFunctionLibrary {
 public:
     UIGS_CoverHelpers();
 
-    UFUNCTION(BlueprintCallable)
-    static void GetAllCoverInShape(const UObject* inWCO, UShapeComponent* Shape, TArray<UCoverPoint*>& outCovers, bool inOnlyManual);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void GetAllCoverInShape(const UObject* inWCO, UShapeComponent* Shape, TArray<UCoverPoint*>& outCovers, bool inOnlyManual);
     
 };
 

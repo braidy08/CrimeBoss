@@ -30,11 +30,11 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsItTurfWarMissionID(const TSubclassOf<UMETA_MissionID>& inMissionID, EMETA_JobType& outMissionType) const;
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<FMETA_MoneyMakingMissionMainDataFromDatabase> GetMoneyMakingMissionIDsWithLootType(const UObject* inWCO, FGameplayTag inLootType);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<FMETA_MoneyMakingMissionMainDataFromDatabase> GetMoneyMakingMissionIDsWithLootType(const UObject* inWCO, FGameplayTag inLootType);
     
-    UFUNCTION(BlueprintCallable)
-    static UMETA_BaseMission* GetMissionObject(const UObject* inWCO, TSubclassOf<UMETA_MissionID> inMissionID);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UMETA_BaseMission* GetMissionObject(const UObject* inWCO, TSubclassOf<UMETA_MissionID> inMissionID);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<UMETA_MissionID> GetMissionIDByTurfWarTypeAndDistrict(EMETA_TurfWarMissionType inTurfWarType, EIGS_HubBackdropTypes inBackdropType) const;
@@ -45,8 +45,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<UMETA_MissionID> GetMissionIDByTradeVendor(EMETA_TradeVendor inVendor) const;
     
-    UFUNCTION(BlueprintCallable)
-    static FMETA_MissionDatabase GetMissionDataBP(const UObject* inWCO, TSubclassOf<UMETA_MissionID> inClass, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FMETA_MissionDatabase GetMissionDataBP(const UObject* inWCO, TSubclassOf<UMETA_MissionID> inClass, bool& outSucceeded);
     
     UFUNCTION(BlueprintCallable)
     TArray<TSubclassOf<UMETA_MissionID>> GetFpsMissionsIdsWithSubType(EMETA_FPSMissionSubtype inFPSMissionSubtype);
@@ -69,8 +69,8 @@ public:
     UFUNCTION(BlueprintCallable)
     bool GenerateMissionObjectiveBP(const UObject* inWCO, const UMETA_BaseMission* inMission, FMETA_ObjectiveTableRow& outBonusObjective, FMETA_ObjectiveRewardData& outRewardData);
     
-    UFUNCTION(BlueprintCallable)
-    static bool CanMissionBeRemovedFromTheMap(const UObject* inWCO, TSubclassOf<UMETA_MissionID> inMissionID, EMETA_JobResult inJobResult);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool CanMissionBeRemovedFromTheMap(const UObject* inWCO, TSubclassOf<UMETA_MissionID> inMissionID, EMETA_JobResult inJobResult);
     
 };
 

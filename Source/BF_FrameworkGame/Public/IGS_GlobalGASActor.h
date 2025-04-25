@@ -28,8 +28,8 @@ protected:
 public:
     AIGS_GlobalGASActor(const FObjectInitializer& ObjectInitializer);
 
-    UFUNCTION(BlueprintCallable)
-    static AIGS_GlobalGASActor* GetGlobalGASActor(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static AIGS_GlobalGASActor* GetGlobalGASActor(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     bool HasMatchingGameplayTag(FGameplayTag TagToCheck) const override PURE_VIRTUAL(HasMatchingGameplayTag, return false;);

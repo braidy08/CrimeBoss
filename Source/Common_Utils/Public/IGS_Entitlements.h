@@ -25,8 +25,8 @@ public:
     UFUNCTION(BlueprintCallable)
     void Refresh();
     
-    UFUNCTION(BlueprintCallable)
-    static bool OpenStore(const UObject* inWCO, FGameplayTag inEntitlementTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool OpenStore(const UObject* inWCO, FGameplayTag inEntitlementTag);
     
     UFUNCTION(BlueprintCallable)
     void LoadDebugEntitlements();
@@ -40,8 +40,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FGameplayTag GetOnlineFactIDByEntitlementID(const FGameplayTag& inEntitlementID) const;
     
-    UFUNCTION(BlueprintCallable)
-    static void GetEntitlementTitle(UObject* inWCO, const FGameplayTag inEntitlement, FText& OutText);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void GetEntitlementTitle(UObject* inWCO, const FGameplayTag inEntitlement, FText& OutText);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FGameplayTag> GetAllEntitlements();

@@ -13,14 +13,14 @@ class COMMON_DATA_API UIGS_MeleeWeaponCategoriesDatabase : public UGameInstanceS
 public:
     UIGS_MeleeWeaponCategoriesDatabase();
 
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static FIGS_MeleeWeaponCategoryRow GetCategoryByWeaponID(const UObject* inWCO, FGameplayTag inWeaponId);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static FIGS_MeleeWeaponCategoryRow GetCategoryByWeaponID(const UObject* inWCO, FGameplayTag inWeaponId);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static FIGS_MeleeWeaponCategoryRow GetCategoryByPreviewWeaponID(const UObject* inWCO, FGameplayTag inWeaponId);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static FIGS_MeleeWeaponCategoryRow GetCategoryByPreviewWeaponID(const UObject* inWCO, FGameplayTag inWeaponId);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static FIGS_MeleeWeaponCategoryRow GetCategory(const UObject* inWCO, FGameplayTag inID);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static FIGS_MeleeWeaponCategoryRow GetCategory(const UObject* inWCO, FGameplayTag inID);
     
 };
 

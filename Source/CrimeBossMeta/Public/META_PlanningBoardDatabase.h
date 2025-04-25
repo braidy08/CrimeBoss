@@ -13,8 +13,8 @@ class CRIMEBOSSMETA_API UMETA_PlanningBoardDatabase : public UGameInstanceSubsys
 public:
     UMETA_PlanningBoardDatabase();
 
-    UFUNCTION(BlueprintCallable)
-    static FMETA_PlanningBoardRow GetPlanningBoardData(UObject* inWCO, const FGameplayTag inPlanningBoardID, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FMETA_PlanningBoardRow GetPlanningBoardData(UObject* inWCO, const FGameplayTag inPlanningBoardID, bool& outSucceeded);
     
 };
 

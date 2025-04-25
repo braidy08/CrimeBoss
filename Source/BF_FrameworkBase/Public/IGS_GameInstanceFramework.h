@@ -41,8 +41,8 @@ protected:
     void StartMissionInternal(const UObject* inWCO, TSubclassOf<UIGS_BaseMissionObject> inMissionID);
     
 public:
-    UFUNCTION(BlueprintCallable)
-    static void StartMission(const UObject* inWCO, TSubclassOf<UIGS_BaseMissionObject> inMissionID);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void StartMission(const UObject* inWCO, TSubclassOf<UIGS_BaseMissionObject> inMissionID);
     
     UFUNCTION(BlueprintCallable)
     void ServerTravel(const UObject* inWCO, const FString& inLevelName, bool inAbsolute);
@@ -79,11 +79,11 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool IsTextChatAllowed();
     
-    UFUNCTION(BlueprintCallable)
-    static bool IsMissionEndIgnored(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool IsMissionEndIgnored(const UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static void IgnoreMissionEnd(const UObject* inWCO, bool inIgnoreMissionEnd);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void IgnoreMissionEnd(const UObject* inWCO, bool inIgnoreMissionEnd);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EIGS_PlatformServerConnectionStatus GetPlatformServerConnectionStatus() const;
@@ -93,16 +93,16 @@ protected:
     void FinishMissionInternal(const UObject* inWCO, ECommonMissionResult inMissionResult);
     
 public:
-    UFUNCTION(BlueprintCallable)
-    static void FinishMission(const UObject* inWCO, ECommonMissionResult inMissionResult);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void FinishMission(const UObject* inWCO, ECommonMissionResult inMissionResult);
     
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void CreateLoadingFaderInternal();
     
 public:
-    UFUNCTION(BlueprintCallable)
-    static void CreateLoadingFader(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void CreateLoadingFader(const UObject* inWCO);
     
 };
 

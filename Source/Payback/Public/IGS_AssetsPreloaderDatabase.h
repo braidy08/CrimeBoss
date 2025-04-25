@@ -29,14 +29,14 @@ protected:
 public:
     UIGS_AssetsPreloaderDatabase();
 
-    UFUNCTION(BlueprintCallable)
-    static void UseOrCreateAssetsPreloader(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void UseOrCreateAssetsPreloader(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_AssetsPreloaderTableRow GetDataPreloader(UObject* inWCO, const FGameplayTag& inID, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_AssetsPreloaderTableRow GetDataPreloader(UObject* inWCO, const FGameplayTag& inID, bool& outSucceeded);
     
-    UFUNCTION(BlueprintCallable)
-    static void DestroyAssetsPreloader(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void DestroyAssetsPreloader(UObject* inWCO);
     
 };
 

@@ -31,8 +31,8 @@ public:
     UFUNCTION(BlueprintCallable)
     void StartDialogueLine(FName inLineID, EIGS_MetaDialogueCharacterSlot inSlot, int32 inLineOrderID, int32 inLinesCount, float inLineLength);
     
-    UFUNCTION(BlueprintCallable)
-    static UIGS_PlayMetaDialogue* PlayMetaDialogue(UObject* inWCO, FText DialogueID, UPARAM(Ref) TMap<EIGS_MetaDialogueCharacterSlot, EIGS_MetaDialogueCharacter>& inCharacters);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_PlayMetaDialogue* PlayMetaDialogue(UObject* inWCO, FText DialogueID, UPARAM(Ref) TMap<EIGS_MetaDialogueCharacterSlot, EIGS_MetaDialogueCharacter>& inCharacters);
     
     UFUNCTION(BlueprintCallable)
     void FinishDialogueLine(FName inLineID, EIGS_MetaDialogueCharacterSlot inSlot, int32 inLineOrderID, int32 inLinesCount, float inLineLength);

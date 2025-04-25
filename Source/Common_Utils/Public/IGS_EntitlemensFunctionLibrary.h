@@ -12,14 +12,14 @@ class COMMON_UTILS_API UIGS_EntitlemensFunctionLibrary : public UBlueprintFuncti
 public:
     UIGS_EntitlemensFunctionLibrary();
 
-    UFUNCTION(BlueprintCallable)
-    static bool IsUserEntitledTo(const UObject* inWCO, FGameplayTag inGameplayTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool IsUserEntitledTo(const UObject* inWCO, FGameplayTag inGameplayTag);
     
-    UFUNCTION(BlueprintCallable)
-    static bool IsEntitlementDLC(const UObject* inWCO, FGameplayTag inGameplayTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool IsEntitlementDLC(const UObject* inWCO, FGameplayTag inGameplayTag);
     
-    UFUNCTION(BlueprintCallable)
-    static void GetEntitlementOwnedSavedDiff(const UObject* inWCO, const TArray<FGameplayTag> inOwnedEntitlements, const TArray<FGameplayTag> inSavedEntitlements, bool& outAnyMissingInSave, bool& outAnyMissingCurrent);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void GetEntitlementOwnedSavedDiff(const UObject* inWCO, const TArray<FGameplayTag> inOwnedEntitlements, const TArray<FGameplayTag> inSavedEntitlements, bool& outAnyMissingInSave, bool& outAnyMissingCurrent);
     
 };
 

@@ -24,17 +24,17 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetIndex(const TSubclassOf<UIGS_EquipmentInventoryObject>& inClass) const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static UIGS_EquipmentDatabase* GetEquipmentDatabaseInstance(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static UIGS_EquipmentDatabase* GetEquipmentDatabaseInstance(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<TSubclassOf<UIGS_EquipmentInventoryObject>> GetEquipmentByQualities(UObject* inWCO, const TArray<EMETA_ItemQuality>& inQualities, const TArray<FGameplayTag>& inUnlockedEquipment, bool inIgnoreUnlock);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<TSubclassOf<UIGS_EquipmentInventoryObject>> GetEquipmentByQualities(UObject* inWCO, const TArray<EMETA_ItemQuality>& inQualities, const TArray<FGameplayTag>& inUnlockedEquipment, bool inIgnoreUnlock);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_EquipmentTableRow GetDataEquipmentByTagID(const UObject* inWCO, FGameplayTag inTagID, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_EquipmentTableRow GetDataEquipmentByTagID(const UObject* inWCO, FGameplayTag inTagID, bool& outSucceeded);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_EquipmentTableRow GetDataEquipment(UObject* inWCO, const TSubclassOf<UIGS_EquipmentInventoryObject>& inClass, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_EquipmentTableRow GetDataEquipment(UObject* inWCO, const TSubclassOf<UIGS_EquipmentInventoryObject>& inClass, bool& outSucceeded);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FIGS_EquipmentTableRow GetDataByIndexBP(int32 inIndex, bool& outSucceeded) const;

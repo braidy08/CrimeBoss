@@ -146,8 +146,8 @@ public:
 
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
-    UFUNCTION(BlueprintCallable)
-    static float UpdateLootWeightMultiplier(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static float UpdateLootWeightMultiplier(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     TMap<FGameplayTag, float> SortLootByTag(TArray<TSubclassOf<UIGS_InventoryObjectFramework>> inLoot);
@@ -188,8 +188,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetThrowableItemSize(EIGS_LootSize inWeight) const;
     
-    UFUNCTION(BlueprintCallable)
-    static UIGS_LootManager* GetLootManager(const UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_LootManager* GetLootManager(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     float GetItemValueFromClass(TSubclassOf<UIGS_LootItemInventoryObject> inItemClass);
@@ -206,8 +206,8 @@ public:
     UFUNCTION(BlueprintCallable)
     void ForceSetMissionBagsInWeight(int32 inRequiredBags);
     
-    UFUNCTION(BlueprintCallable)
-    static void DisableLootVoiceLines(UObject* inWCO, bool bDisable);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static void DisableLootVoiceLines(UObject* inWCO, bool bDisable);
     
     UFUNCTION(BlueprintCallable)
     float CalculateSpecialLootItemValue(FGameplayTag inItemTag, float inItemWeight);

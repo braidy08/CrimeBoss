@@ -129,8 +129,8 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetWorldSpaceWidgetTypeVisibility(EIGS_WorldWidgetType inType, bool inEnabled);
     
-    UFUNCTION(BlueprintCallable)
-    static UIGS_WorldSpaceWidgetManager* GetWorldWidgetManager(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_WorldSpaceWidgetManager* GetWorldWidgetManager(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     bool GetWidgetGroupVisibility(EIGS_WorldWidgetType inType);

@@ -38,8 +38,8 @@ class CRIMEBOSSMETA_API UMETA_NotificationDatabase : public UGameInstanceSubsyst
 public:
     UMETA_NotificationDatabase();
 
-    UFUNCTION(BlueprintCallable)
-    static FMETA_NotificationTableRow GetNotificationData(UObject* inWCO, const TSoftObjectPtr<UMETA_NotificationID> inClass, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FMETA_NotificationTableRow GetNotificationData(UObject* inWCO, const TSoftObjectPtr<UMETA_NotificationID> inClass, bool& outSucceeded);
     
     UFUNCTION(BlueprintCallable)
     UMETA_WeaponNotification* CreateWeaponNotificationObject(UObject* inWCO, TSoftObjectPtr<UMETA_NotificationID> inID, UMETA_Weapon* inWeapon);

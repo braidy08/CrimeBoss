@@ -13,8 +13,8 @@ class BF_VOICEOVER_API UIGS_PlayDialogueOnCharacter : public UIGS_PlayDialogueNo
 public:
     UIGS_PlayDialogueOnCharacter();
 
-    UFUNCTION(BlueprintCallable)
-    static UIGS_PlayDialogueOnCharacter* PlayDialogueOnCharacter(UObject* inWCO, FText DialogueID, AActor* inCharacter);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_PlayDialogueOnCharacter* PlayDialogueOnCharacter(UObject* inWCO, FText DialogueID, AActor* inCharacter);
     
 };
 

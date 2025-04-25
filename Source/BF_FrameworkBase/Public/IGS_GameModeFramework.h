@@ -18,8 +18,8 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetPlayersImmortal(bool inImmortal);
     
-    UFUNCTION(BlueprintCallable)
-    static bool IsAnyHeisterAlive(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static bool IsAnyHeisterAlive(UObject* inWCO);
     
 };
 

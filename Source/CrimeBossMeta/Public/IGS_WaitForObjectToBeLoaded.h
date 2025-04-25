@@ -33,8 +33,8 @@ private:
 public:
     UIGS_WaitForObjectToBeLoaded();
 
-    UFUNCTION(BlueprintCallable)
-    static UIGS_WaitForObjectToBeLoaded* WaitForObjectToBeLoaded(UObject* inWCO, FGameplayTag inObjectID, bool inFailAfterAttempts, int32 inAttemptsCount, float inDelayBetweenAttempts);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static UIGS_WaitForObjectToBeLoaded* WaitForObjectToBeLoaded(UObject* inWCO, FGameplayTag inObjectID, bool inFailAfterAttempts, int32 inAttemptsCount, float inDelayBetweenAttempts);
     
 private:
     UFUNCTION(BlueprintCallable)

@@ -27,23 +27,23 @@ public:
     UFUNCTION(BlueprintCallable)
     void ModAppendDataTable(UDataTable* inNewTable);
     
-    UFUNCTION(BlueprintCallable)
-    static FGameplayTag GetWiedableClassByTagId(const UObject* inWCO, const FGameplayTag& inWeaponTag);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FGameplayTag GetWiedableClassByTagId(const UObject* inWCO, const FGameplayTag& inWeaponTag);
     
-    UFUNCTION(BlueprintCallable)
-    static FGameplayTag GetWiedableClassById(const UObject* inWCO, const TSubclassOf<UMETA_WeaponInventoryObject>& inWeaponId);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FGameplayTag GetWiedableClassById(const UObject* inWCO, const TSubclassOf<UMETA_WeaponInventoryObject>& inWeaponId);
     
-    UFUNCTION(BlueprintCallable)
-    static TSoftObjectPtr<UTexture2D> GetWeaponIcon(UObject* inWCO, TSubclassOf<UMETA_WeaponInventoryObject> inWeaponObject, TSoftObjectPtr<UDataAsset> inWeaponSkin);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TSoftObjectPtr<UTexture2D> GetWeaponIcon(UObject* inWCO, TSubclassOf<UMETA_WeaponInventoryObject> inWeaponObject, TSoftObjectPtr<UDataAsset> inWeaponSkin);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static UIGS_WeaponDefinitionsDatabase* GetWeaponDefinitionsDatabaseInstance(UObject* inWCO);
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWCO))
+static UIGS_WeaponDefinitionsDatabase* GetWeaponDefinitionsDatabaseInstance(UObject* inWCO);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_WeaponDefinitionTableRow GetDataWeaponByTagID(const UObject* inWCO, FGameplayTag inTagID, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_WeaponDefinitionTableRow GetDataWeaponByTagID(const UObject* inWCO, FGameplayTag inTagID, bool& outSucceeded);
     
-    UFUNCTION(BlueprintCallable)
-    static FIGS_WeaponDefinitionTableRow GetDataWeapon(const UObject* inWCO, const TSubclassOf<UMETA_WeaponInventoryObject>& inClass, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static FIGS_WeaponDefinitionTableRow GetDataWeapon(const UObject* inWCO, const TSubclassOf<UMETA_WeaponInventoryObject>& inClass, bool& outSucceeded);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FIGS_WeaponDefinitionTableRow GetDataByIndexBP(int32 inIndex, bool& outSucceeded) const;
@@ -51,11 +51,11 @@ public:
     UFUNCTION(BlueprintCallable)
     TArray<FIGS_WeaponDefinitionTableRow> GetDatabaseTableBP();
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<FIGS_WeaponDefinitionTableRow> GetAllGenerableWeaponsData(const UObject* inWCO, bool inIncludeDLCs, bool inOnlyIfEntitledTo);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<FIGS_WeaponDefinitionTableRow> GetAllGenerableWeaponsData(const UObject* inWCO, bool inIncludeDLCs, bool inOnlyIfEntitledTo);
     
-    UFUNCTION(BlueprintCallable)
-    static TArray<FIGS_WeaponDefinitionTableRow> GetAllDataWeaponsWithFPSWeaponID(const UObject* inWCO, const TSubclassOf<UIGS_WieldableInventoryObjectBase>& inFPSWeaponID, bool& outSucceeded);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWCO))
+static TArray<FIGS_WeaponDefinitionTableRow> GetAllDataWeaponsWithFPSWeaponID(const UObject* inWCO, const TSubclassOf<UIGS_WieldableInventoryObjectBase>& inFPSWeaponID, bool& outSucceeded);
     
 };
 
