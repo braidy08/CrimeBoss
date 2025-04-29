@@ -5,6 +5,7 @@ public class CrimeBossGameTarget : TargetRules {
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 		ExtraModuleNames.AddRange(new string[] {
+			"CrimeBoss",
 			"BF_AI",
 			"BF_Analytics",
 			"BF_Animations",
